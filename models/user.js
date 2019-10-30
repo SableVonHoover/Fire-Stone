@@ -6,11 +6,13 @@ const userSchema = new Schema({
         type: String,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
         unique: true,
+        trim: true,
         required: true
     },
     username: {
         type: String,
         unique: true,
+        trim: true,
         required: true
     },
     //Array of associated characters by id (only one character should be made per user at this point however)

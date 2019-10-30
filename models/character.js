@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 //Character Schema
 const characterSchema = new Schema({
-    level: { type: Number, required: true },
-    hitpoints: { type: Number, required: true },
-    attack: { type: Boolean, required: true },
-    defense: { type: Number, required: true },
-    speed: { type: Number, required: true },
+    level: { type: Number, trim: true, required: true },
+    hitpoints: { type: Number, trim: true, required: true },
+    attack: { type: Boolean, trim: true, required: true },
+    defense: { type: Number, trim: true, required: true },
+    speed: { type: Number, trim: true, required: true },
     //Array that holds attacks that have been assigned to this character
     attacks: [
         {
