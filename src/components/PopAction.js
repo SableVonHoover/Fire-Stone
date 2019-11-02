@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: "App" },
+  { icon: <FileCopyIcon />, name: "Game" },
   { icon: <SaveIcon />, name: "AboutApp" },
   { icon: <PrintIcon />, name: "Instructions" },
   { icon: <ShareIcon />, name: "SignIn" },
