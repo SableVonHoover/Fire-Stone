@@ -10,7 +10,7 @@ import SaveIcon from "@material-ui/icons/Save";
 import PrintIcon from "@material-ui/icons/Print";
 import ShareIcon from "@material-ui/icons/Share";
 import DeleteIcon from "@material-ui/icons/Delete";
-import ViewContainer from "./ViewContainer";
+// import ViewContainer from "./ViewContainer";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,14 +26,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: "Copy" },
-  { icon: <SaveIcon />, name: "Save" },
-  { icon: <PrintIcon />, name: "Print" },
-  { icon: <ShareIcon />, name: "Share" },
-  { icon: <DeleteIcon />, name: "Delete" }
+  { icon: <FileCopyIcon />, name: "App" },
+  { icon: <SaveIcon />, name: "AboutApp" },
+  { icon: <PrintIcon />, name: "Instructions" },
+  { icon: <ShareIcon />, name: "SignIn" },
+  { icon: <DeleteIcon />, name: "SignOut" }
 ];
 
-export default function PopAction() {
+export default function PopAction(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
@@ -54,7 +54,6 @@ export default function PopAction() {
     <div>
       <Button onClick={handleVisibility}>Toggle Menu</Button>
       <Backdrop open={open} />
-      <ViewContainer />
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         className={classes.speedDial}
@@ -70,7 +69,10 @@ export default function PopAction() {
             icon={action.icon}
             tooltipTitle={action.name}
             tooltipOpen
-            onClick={handleClose}
+            onClick={() => {
+              props.handleComponentChange(action.name);
+              handleClose(); 
+            }}
           />
         ))}
       </SpeedDial>

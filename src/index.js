@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./css/index.css";
-import PopAction from "./components/PopAction";
+import ButtonActions from "./components/ComponentLink";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <div>
-    <PopAction />
+    <ButtonActions />
   </div>,
   document.getElementById("root")
 );
