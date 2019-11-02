@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import App from "./App";
+import Game from "./Game";
 import AboutApp from "./AboutApp";
 import Instructions from "./Instructions";
 import SignIn from "./SignIn";
@@ -9,7 +9,7 @@ import PopAction from "./PopAction";
 
 export default class ButtonActions extends Component {
   state = {
-    currentComponent: "App"
+    currentComponent: "SignIn"
   };
 
   handleComponentChange = component => {
@@ -17,8 +17,8 @@ export default class ButtonActions extends Component {
   };
 
   renderComponent = () => {
-    if (this.state.currentComponent === "App") {
-      return <App />;
+    if (this.state.currentComponent === "Game") {
+      return <Game />;
     } else if (this.state.currentComponent === "AboutApp") {
       return <AboutApp />;
     } else if (this.state.currentComponent === "Instructions") {
