@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from '../logo.svg';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import '../css/App.css';
 
-function Instructions() {
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(3, 2),
+  },
+}));
+
+export default function AboutApp() {
+  const classes = useStyles();
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          This is Instructions
-        </a>
-      </header>
+      
+    <div class="sideBG" style={{backgroundColor: "lightgray",}}>
+
+    <Paper style={{height: 450, width: 750, marginTop: 20, margin: "auto", backgroundColor: "blue" }} className="paper">
+        <br></br>
+      <Typography variant="h5" component="h3" style={{marginTop: 10, textAlign: "center", color: "orange"}}>
+        Instructions.
+      </Typography>
+      
+      <Typography component="p" style={{marginTop: 10, color: "white", textAlign: "center"}}>
+        The world is in danger, and it needs YOUR help!
+
+
+        <p style={{marginTop: 100, fontSize: 60}}>LOGO!</p>
+      </Typography>
+      
+    </Paper>
     </div>
   );
 }
-
-export default Instructions;
