@@ -1,35 +1,57 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import '../css/App.css';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import "../css/App.css";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
+import { AutoRotatingCarousel } from "material-auto-rotating-carousel";
+import PeterTan from "./PeterTan";
+import AdamNewman from "./AdamNewman";
+import NicholasShipley from "./NicholasShipley";
+import SableHoover from "./SableHoover";
+import Button from "@material-ui/core/Button";
+import { black } from "ansi-colors";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(3, 2),
-  },
-}));
+export default function AboutApp(props) {
+  const [open, setOpen] = React.useState(false);
 
-export default function AboutApp() {
-  const classes = useStyles();
-  
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
-       <div class="sideBG" style={{backgroundColor: "lightgray",}}>
-          
-    <Paper style={{height: 450, width: 750, marginTop: 20, margin: "auto", backgroundColor: "black" }} className="paper">
-        <br></br>
-      <Typography variant="h5" component="h3" style={{marginTop: 10, textAlign: "center", color: "orange"}}>
-        Welcome To FireStone.
-      </Typography>
-      
-      <Typography component="p" style={{marginTop: 10, color: "white", textAlign: "center"}}>
-        The world is in danger, and it needs YOUR help!
-
-
-        <p style={{marginTop: 100, fontSize: 60}}>LOGO!</p>
-      </Typography>
-      
-    </Paper>
-     </div>
+    <div>
+      <Container component="main" maxWidth="xs" align="center" justify="center">
+        <CssBaseline />
+        <Button onClick={handleOpen} className="paper">
+          <Paper
+            style={{
+              height: 450,
+              width: 750,
+              backgroundColor: black
+            }}
+            className="paper"
+          >
+            Open carousel
+          </Paper>
+        </Button>
+        <AutoRotatingCarousel
+          label="Close"
+          open={open}
+          onClose={handleClose}
+          onStart={handleClose}
+        >
+          <PeterTan />
+          <AdamNewman />
+          <NicholasShipley />
+          <SableHoover />
+        </AutoRotatingCarousel>
+      </Container>
+    </div>
   );
 }
