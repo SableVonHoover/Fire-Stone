@@ -14,14 +14,14 @@ import DeleteIcon from "@material-ui/icons/Delete";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: 380,
+    height: 500,
     transform: "translateZ(0px)",
     flexGrow: 1
   },
   speedDial: {
     position: "absolute",
     bottom: theme.spacing(2),
-    right: theme.spacing(2)
+    right: theme.spacing(4)
   }
 }));
 
@@ -71,7 +71,6 @@ export default function PopAction(props) {
             tooltipOpen
             onClick={() => {
               props.handleComponentChange(action.name);
-              handleClose(); 
             }}
           />
         ))}
