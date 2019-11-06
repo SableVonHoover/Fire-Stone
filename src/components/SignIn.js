@@ -22,7 +22,8 @@ const Login = ({ history }) => {
       event.preventDefault();
       const { email, password } = event.target.elements;
       try {
-        await app.auth()
+        await app
+          .auth()
           //This is Firebase's function for logging in
           .signInWithEmailAndPassword(email.value, password.value);
 
@@ -65,6 +66,8 @@ const Login = ({ history }) => {
   if (currentUser) {
     return <Redirect to="/" />;
   }
+
+  const classes = useStyles;
 
   return (
     <Container component="main" maxWidth="xs">
