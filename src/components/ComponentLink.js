@@ -4,6 +4,7 @@ import Game from "./Game";
 import AboutApp from "./AboutApp";
 import Instructions from "./Instructions";
 import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 import SignOut from "./SignOut";
 import Paper from "@material-ui/core/Paper";
 import PopAction from "./PopAction";
