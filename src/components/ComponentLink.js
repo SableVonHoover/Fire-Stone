@@ -13,9 +13,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Copyright from "./Copyright";
 import Box from "@material-ui/core/Box";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AuthProvider } from "../js/auth";
-import PrivateRoute from "../js/privateRoute";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -56,16 +53,6 @@ export default class ButtonActions extends Component {
 
   render() {
     return (
-      <AuthProvider>
-        <Router>
-          <div>
-            <PrivateRoute exact path="/" component={AboutApp} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} />
-          </div>
-        </Router >
-      </AuthProvider>
-
       <Container component="main" maxWidth="xl" align="center" justify="center">
         <CssBaseline />
         <div>
