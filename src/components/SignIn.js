@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,7 +12,6 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import app from "../js/firebaseConfig";
 import { AuthContext } from "../js/auth.js";
@@ -24,7 +23,11 @@ const Login = ({ history }) => {
       const { email, password } = event.target.elements;
       try {
         await app.auth()
+          //This is Firebase's function for logging in
           .signInWithEmailAndPassword(email.value, password.value);
+
+        //####################  NOTE  ##########################
+        //If logged in successfully, redirect to this Route
         history.push("/");
       } catch (error) {
         alert(error);
@@ -34,7 +37,7 @@ const Login = ({ history }) => {
   );
 
   const { currentUser } = useContext(AuthContext);
-    const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles(theme => ({
     "@global": {
       body: {
         backgroundColor: theme.palette.common.white

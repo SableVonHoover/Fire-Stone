@@ -8,8 +8,12 @@ const SignUp = ({ history }) => {
         const { email, password } = event.target.elements;
         try {
             await app
+                //This is Firebase's function that create's a new user in the db
                 .auth()
                 .createUserWithEmailAndPassword(email.value, password.value);
+
+            //####################  NOTE  ##########################
+            //If account successfully created, redirect to this Route
             history.push("/");
         } catch (error) {
             alert(error);
