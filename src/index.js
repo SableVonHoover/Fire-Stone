@@ -5,11 +5,9 @@ import ButtonActions from "./components/ComponentLink";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AuthProvider } from "./js/auth.js";
-import PrivateRoute from "./js/privateRoute";
-import { width } from "window-size";
 
 ReactDOM.render(
-  <div id="body">
+  <div>
     <AuthProvider>
       <Router>
         <div
