@@ -1,16 +1,17 @@
 import React from "react";
 import { Slide } from "material-auto-rotating-carousel";
+import { pink } from "@material-ui/core/colors";
 
 export default function SableHoover() {
-  const { red } = require("@material-ui/core/colors");
+  const { amber } = require("@material-ui/core/colors/");
   const { withStyles } = require("@material-ui/core/styles");
 
   const styles = {
     root: {
-      backgroundColor: red[600],
+      backgroundColor: pink[100]
     },
     media: {
-      backgroundColor: red[400]
+      backgroundColor: pink[100]
     }
   };
 
@@ -20,12 +21,13 @@ export default function SableHoover() {
     <StyledSlide
       media={
         <img
-          src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"
+          style={{ width: "100%", height: "100%" }}
+          src="https://ca.slack-edge.com/TJP3TP97Y-UJVSLLAAG-d390a301b876-512"
           alt=""
         />
       }
-      title="This is a very cool feature"
-      subtitle="Just using this will blow your mind."
+      title="This is Sable Hoover"
+      subtitle="Our Backend Developer, Authentication and Database Engineer."
     />
   );
 }

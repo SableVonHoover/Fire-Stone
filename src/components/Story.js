@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AboutApp() {
+export default function Story() {
   const classes = useStyles();
 
   return (
@@ -59,6 +59,5 @@ export default function AboutApp() {
     </Container>
   );
 }
-
 
 export default App;

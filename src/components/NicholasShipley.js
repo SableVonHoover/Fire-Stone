@@ -2,15 +2,15 @@ import React from "react";
 import { Slide } from "material-auto-rotating-carousel";
 
 export default function NicholasShipley() {
-  const { red } = require("@material-ui/core/colors");
+  const { green } = require("@material-ui/core/colors");
   const { withStyles } = require("@material-ui/core/styles");
 
   const styles = {
     root: {
-      backgroundColor: red[600],
+      backgroundColor: green[900]
     },
     media: {
-      backgroundColor: red[400]
+      backgroundColor: green[900]
     }
   };
 
@@ -20,12 +20,13 @@ export default function NicholasShipley() {
     <StyledSlide
       media={
         <img
-          src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"
+          style={{ width: "100%", height: "100%" }}
+          src="https://ca.slack-edge.com/TJP3TP97Y-UJY49QQHM-deea91cab3ec-512"
           alt=""
         />
       }
-      title="This is a very cool feature"
-      subtitle="Just using this will blow your mind."
+      title="This is Nicholas Shipley"
+      subtitle="Our Backend Developer and Game Mechanics Engineer."
     />
   );
 }
