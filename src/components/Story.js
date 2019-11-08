@@ -33,35 +33,32 @@ export default function AboutApp() {
           style={{
             height: 450,
             width: 750,
-            backgroundColor: "black",
+            backgroundColor: "blue",
             backgroundPosition: "center"
           }}
           className="paper"
         >
-          
-         
-          <div id="intro"> Welcome, brave warrior, to.....</div>
-    <div id="logo"></div>
-    <div id="scroller">
-        <div>
-          <p>
-            Blah blah blah blah blah blah Blah blah blah blah blah blahBlah blah blah blah blah blah.
-          </p>
-          <p>
-          Blah blah blah blah blah blahBlah blah blah blah blah blahBlah blah blah blah blah blahBlah blah blah blah blah blah
-          <p>
-          Blah blah blah blah blah blahBlah blah blah blah blah blahBlah blah blah blah blah blahBlah blah blah blah blah blahBlah blah blah blah blah blahBlah blah blah blah blah blah
-          </p>
-      </p>
-      </div>
-    </div>
-    
+          <br></br>
+          <Typography
+            variant="h5"
+            component="h3"
+            style={{ marginTop: 10, textAlign: "center", color: "orange" }}
+          >
+            Instructions.
+          </Typography>
 
-
-           
-         
+          <Typography
+            component="p"
+            style={{ marginTop: 10, color: "white", textAlign: "center" }}
+          >
+            The world is in danger, and it needs YOUR help!
+            <p style={{ marginTop: 100, fontSize: 60 }}>LOGO!</p>
+          </Typography>
         </Paper>
       </div>
     </Container>
   );
 }
+
+
+export default App;
