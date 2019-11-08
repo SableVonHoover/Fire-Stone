@@ -7,15 +7,19 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import "../css/App.css";
+import Knight from "../images/knight.gif";
+import Wizard from "../images/wizard.gif"
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 300,
-    maxHeight: 200,
-    marginLeft: "auto",
-    marginTop: 57,
-    float: "left",
-    backgroundColor: "red"
+    // maxWidth: 200,
+    // Height: 700,
+    // marginLeft: 50,
+    // margintop: 50,
+    
+    // backgroundColor: "red",
+    
   },
 
 });
@@ -24,7 +28,7 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} class="FC1">
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -32,21 +36,42 @@ export default function MediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2"
-          style={{textAlign: "center", marginBottom: 30}}>
-            Fighter 1
-          </Typography>
+        <img src={Knight}
+        style={{
+        textAlign: "center",
+        height: 250,
+        width: 250,
+        transform: "rotatey(180deg)"
+
+        }}/>
+
+        {/* <img src={Wizard}
+        style={{
+        textAlign: "center",
+        height: 250,
+        width: 250,
+
+        }}/> */}
+        
+
+       
           
         </CardContent>
       </CardActionArea>
       <CardActions style={{textAlign: "center"}}>
-        <Button size="small" color="primary">
+        {/* <Button size="small" color="primary">
           Attack 1
         </Button>
         <Button size="small" color="primary">
           Attack 2
-        </Button>
+        </Button> */}
       </CardActions>
+         
+    <h3>Your Health <span id="player-health"></span></h3>
+    <button id="attack-button-1" onclick="attack()">hit em</button>
+    <button id="attack-button-2" onclick="attack()">hit em</button>
+    <button id="restart-button" hidden="true" onclick="restart()">Restart game</button>
+    <h3 id="game-message"></h3>
     </Card>
   );
 }
