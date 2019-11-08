@@ -6,15 +6,20 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AuthProvider } from "./js/auth.js";
 import PrivateRoute from "./js/privateRoute";
+import { width } from "window-size";
 
 ReactDOM.render(
-  <div>
+  <div id="body">
     <AuthProvider>
       <Router>
-        <div>
-          {/* <PrivateRoute exact path="/" component={AboutApp} />
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/signup" component={SignUp} /> */}
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
           <ButtonActions />
         </div>
       </Router>

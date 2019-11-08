@@ -20,7 +20,6 @@ export default function NicholasShipley() {
     <StyledSlide
       media={
         <img
-          style={{ width: "100%", height: "100%" }}
           src="https://ca.slack-edge.com/TJP3TP97Y-UJY49QQHM-deea91cab3ec-512"
           alt=""
         />
