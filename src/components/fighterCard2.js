@@ -48,6 +48,7 @@ export default function MediaCard() {
               height: 200,
               width: 190
             }}
+            alt=""
           />
           {/* <img src={Forest } className="forest"
         style={{

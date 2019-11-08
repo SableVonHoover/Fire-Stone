@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AboutApp() {
+export default function Instructions() {
   const classes = useStyles();
 
   return (
@@ -32,33 +32,41 @@ export default function AboutApp() {
         <CssBaseline />
         <Paper
           style={{
-            height: 450,
-            width: 750,
+            height: "60vh",
+            width: "60vw",
             backgroundColor: "black",
             backgroundPosition: "center"
           }}
           className="paper"
         >
           <Grid container>
-            <div id="intro"> Welcome, brave warrior, to.....</div>
-            <div id="logo"></div>
-            <div id="scroller">
-              <div>
-                <p>
-                  Blah blah blah blah blah blah Blah blah blah blah blah
-                  blahBlah blah blah blah blah blah.
-                </p>
-                <p>
-                  Blah blah blah blah blah blahBlah blah blah blah blah blahBlah
-                  blah blah blah blah blahBlah blah blah blah blah blah
-                </p>
-                <p>
-                  Blah blah blah blah blah blahBlah blah blah blah blah blahBlah
-                  blah blah blah blah blahBlah blah blah blah blah blahBlah blah
-                  blah blah blah blahBlah blah blah blah blah blah
-                </p>
+            <Grid item xs={12}>
+              <div id="intro"> Welcome, brave warrior, to.....</div>
+            </Grid>
+            <Grid item xs={12}>
+              <div id="logo"></div>
+            </Grid>
+            <Grid item xs={12}>
+              <div id="scroller">
+                <div>
+                  <p>
+                    Blah blah blah blah blah blah Blah blah blah blah blah
+                    blahBlah blah blah blah blah blah.
+                  </p>
+                  <p>
+                    Blah blah blah blah blah blahBlah blah blah blah blah
+                    blahBlah blah blah blah blah blahBlah blah blah blah blah
+                    blah
+                  </p>
+                  <p>
+                    Blah blah blah blah blah blahBlah blah blah blah blah
+                    blahBlah blah blah blah blah blahBlah blah blah blah blah
+                    blahBlah blah blah blah blah blahBlah blah blah blah blah
+                    blah
+                  </p>
+                </div>
               </div>
-            </div>
+            </Grid>
           </Grid>
         </Paper>
       </div>
