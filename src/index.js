@@ -4,8 +4,8 @@ import "./css/index.css";
 import ButtonActions from "./components/ComponentLink";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AuthProvider } from "../js/auth.js";
-import PrivateRoute from "../js/privateRoute";
+import { AuthProvider } from "./js/auth.js";
+import PrivateRoute from "./js/privateRoute";
 
 ReactDOM.render(
   <div>

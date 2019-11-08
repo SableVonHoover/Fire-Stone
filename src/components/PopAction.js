@@ -5,11 +5,11 @@ import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import MenuIcon from "@material-ui/icons/Menu";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
-import FileCopyIcon from "@material-ui/icons/FileCopyOutlined";
-import SaveIcon from "@material-ui/icons/Save";
-import PrintIcon from "@material-ui/icons/Print";
-import ShareIcon from "@material-ui/icons/Share";
-import DeleteIcon from "@material-ui/icons/Delete";
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import HelpIcon from '@material-ui/icons/Help';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import AddIcon from "@material-ui/icons/Add";
 // import ViewContainer from "./ViewContainer";
 
 const useStyles = makeStyles(theme => ({
@@ -26,11 +26,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: "Game" },
-  { icon: <SaveIcon />, name: "AboutApp" },
-  { icon: <PrintIcon />, name: "Instructions" },
-  { icon: <ShareIcon />, name: "SignIn" },
-  { icon: <DeleteIcon />, name: "SignOut" }
+  { icon: <SportsEsportsIcon />, name: "Game" },
+  { icon: <ContactsIcon />, name: "AboutUs" },
+  { icon: <HelpIcon />, name: "Instructions" },
+  { icon: <AssignmentIndIcon />, name: "SignIn" },
+  { icon: <AddIcon />, name: "SignUp" }
 ];
 
 export default function PopAction(props) {
@@ -70,8 +70,9 @@ export default function PopAction(props) {
             tooltipTitle={action.name}
             tooltipOpen
             onClick={() => {
-              props.handleComponentChange(action.name);
-            }}
+                props.handleComponentChange(action.name);
+              }
+            }
           />
         ))}
       </SpeedDial>
