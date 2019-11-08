@@ -20,7 +20,6 @@ export default function PeterTan() {
     <StyledSlide
       media={
         <img
-          style={{ width: "100%", height: "100%" }}
           src="https://ca.slack-edge.com/TJP3TP97Y-UJBLLF259-9b02def75c37-512"
           alt=""
         />
