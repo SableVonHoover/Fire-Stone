@@ -19,6 +19,7 @@ import Grid from "@material-ui/core/Grid";
 import Copyright from "./Copyright";
 import Box from "@material-ui/core/Box";
 import Grow from "@material-ui/core/Grow";
+import BackdropFilter from "react-backdrop-filter";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -63,7 +64,6 @@ export default class ButtonActions extends Component {
               this.handleComponentChange("");
             }}
             interval={8000}
-            mobile
           >
             <PeterTan />
             <AdamNewman />
@@ -95,27 +95,12 @@ export default class ButtonActions extends Component {
 
   render() {
     return (
-      <Container
-        component="main"
-        maxWidth="xl"
-        align="center"
-        justify="center"
-      >
+      <Container component="main" maxWidth="xl" align="center" justify="center">
         <CssBaseline />
         <div className="body">
-          <Grid container>
+          <Grid container className="container">
             <Grid item xs>
-              <Card
-                className="card"
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
-                  height: "80vh",
-                  width: "80vw"
-                }}
-              >
+              <Card className="card">
                 <PopAction
                   currentComponent={this.state.currentComponent}
                   handleComponentChange={this.handleComponentChange}

@@ -10,6 +10,7 @@
     "material-auto-rotating-carousel": "^3.0.2",
     "mongoose": "^5.7.7",
     "react": "^16.10.2",
+    "react-backdrop-filter": "^2.0.0",
     "react-dom": "^16.10.2",
     "react-native": "^0.61.4",
     "react-native-web": "^0.11.7",

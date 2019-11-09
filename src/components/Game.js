@@ -39,7 +39,17 @@ export default function Game() {
     <Container component="main" maxWidth="xl" align="center" justify="center">
       <CssBaseline />
       <div className={classes.paper}>
-        <Button onClick={handleVisibility}>Click to Start!</Button>
+        <Button
+          onClick={handleVisibility}
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)"
+          }}
+        >
+          Click to Start!
+        </Button>
         <Grow
           in={!hidden}
           // style={{ transformOrigin: "0 0 0" }}
@@ -48,6 +58,10 @@ export default function Game() {
             style={{
               height: "60vh",
               width: "60vw",
+              position: "absolute",
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundImage: "url(" + Arena + ")",

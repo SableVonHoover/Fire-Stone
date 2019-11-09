@@ -11,10 +11,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-attachment: fixed;
+}
+
+html {  
+  background: url('https://images.pexels.com/photos/1637438/pexels-photo-1637438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background: url('https://media.giphy.com/media/l0HFixTtvQ78aaxqw/giphy.gif') no-repeat; */
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.card {
+  background: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+}
+
+.container {
+  background: inherit;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  backdrop-filter: blur(10px);
 }
 
 code {
