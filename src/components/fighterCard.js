@@ -9,7 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import "../css/App.css";
 import Knight from "../images/knight.gif";
-import Wizard from "../images/wizard.gif"
+import Wizard from "../images/wizard.gif";
+import "./NFighting_Logic";
 
 const useStyles = makeStyles({
   card: {
