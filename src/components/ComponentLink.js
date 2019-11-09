@@ -18,6 +18,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Copyright from "./Copyright";
 import Box from "@material-ui/core/Box";
+import Grow from "@material-ui/core/Grow";
+import BackdropFilter from "react-backdrop-filter";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -44,32 +46,50 @@ export default class ButtonActions extends Component {
 
   renderComponent = () => {
     if (this.state.currentComponent === "Game") {
-      return <Game />;
+      return (
+        <Grow in={!false}>
+          <Game />
+        </Grow>
+      );
     } else if (this.state.currentComponent === "AboutUs") {
       return (
-        <AutoRotatingCarousel
-          label="Click here to go to the Instructions page."
-          open={true}
-          onStart={() => {
-            this.handleComponentChange("Instructions");
-          }}
-          onClose={() => {
-            this.handleComponentChange("");
-          }}
-          interval={8000}
-        >
-          <PeterTan />
-          <AdamNewman />
-          <NicholasShipley />
-          <SableHoover />
-        </AutoRotatingCarousel>
+        <Grow in={!false}>
+          <AutoRotatingCarousel
+            label="Click here to go to the Instructions page."
+            open={true}
+            onStart={() => {
+              this.handleComponentChange("Instructions");
+            }}
+            onClose={() => {
+              this.handleComponentChange("");
+            }}
+            interval={8000}
+          >
+            <PeterTan />
+            <AdamNewman />
+            <NicholasShipley />
+            <SableHoover />
+          </AutoRotatingCarousel>
+        </Grow>
       );
     } else if (this.state.currentComponent === "Instructions") {
-      return <Instructions />;
+      return (
+        <Grow in={!false}>
+          <Instructions />
+        </Grow>
+      );
     } else if (this.state.currentComponent === "SignIn") {
-      return <SignIn />;
+      return (
+        <Grow in={!false}>
+          <SignIn />
+        </Grow>
+      );
     } else if (this.state.currentComponent === "SignUp") {
-      return <SignUp />;
+      return (
+        <Grow in={!false}>
+          <SignUp />
+        </Grow>
+      );
     }
   };
 
@@ -77,8 +97,8 @@ export default class ButtonActions extends Component {
     return (
       <Container component="main" maxWidth="xl" align="center" justify="center">
         <CssBaseline />
-        <div>
-          <Grid container>
+        <div className="body">
+          <Grid container className="container">
             <Grid item xs>
               <Card className="card">
                 <PopAction
@@ -91,7 +111,7 @@ export default class ButtonActions extends Component {
                 </Box>
               </Card>
             </Grid>
-          </Grid>{" "}
+          </Grid>
         </div>
       </Container>
     );

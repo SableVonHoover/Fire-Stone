@@ -21,7 +21,6 @@ export default function SableHoover() {
     <StyledSlide
       media={
         <img
-          style={{ width: "100%", height: "100%" }}
           src="https://ca.slack-edge.com/TJP3TP97Y-UJVSLLAAG-d390a301b876-512"
           alt=""
         />
