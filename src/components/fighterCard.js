@@ -65,15 +65,15 @@ export default function MediaCard() {
       <h3>
         Your Health <span id="player-health"></span>
       </h3>
-      <button id="attack-button-1" onclick="attack()">
+      <Button id="attack-button-1" onclick="attack()">
         hit em
-      </button>
-      <button id="attack-button-2" onclick="attack()">
+      </Button>
+      <Button id="attack-button-2" onclick="attack()">
         hit em
-      </button>
-      <button id="restart-button" hidden="true" onClick="restart()">
+      </Button>
+      <Button id="restart-button" hidden="true" onClick="restart()">
         Restart game
-      </button>
+      </Button>
       <h3 id="game-message"></h3>
     </Card>
   );

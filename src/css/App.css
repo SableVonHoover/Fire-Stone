@@ -42,17 +42,22 @@
 
 #attack-button-1 {
   color: red;
-
-
+  background-color: black;
+  margin: 3px;
 }
 
 #attack-button-2 {
   color: red;
-
+  background-color: rgb(75, 213, 238);
+  margin: 3px;
 
 }
 
-
+#restart-button {
+  color: black;
+  background-color: red;
+  margin: 3px;
+}
 
 #intro {
   opacity: 0;
