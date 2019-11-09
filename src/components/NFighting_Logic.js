@@ -50,6 +50,8 @@ const primaryAttackFunction = () => {
         secondaryButton.disabled = false;
     }, 300);//////// ASK ADAM HOW LONG ANIMATIONS WILL LAST FOR CHARACTERS WILL LAST
 };
+
+export default secondaryAttackFunction();
 const secondaryAttackFunction = () => {
     let primaryButton = document.getElementById('attack-button-1');
     let secondaryButton = document.getElementById('attack-button-2');
@@ -79,14 +81,22 @@ const secondaryAttackFunction = () => {
     }, 1000);
 };
 
+export default determineAttack();
 const determineAttack = (attack, defense, level, damage) => {
     return Math.floor(Math.random() * ((2 * level + 10) / 250) * (attack / defense) * damage + 2);
 };
+
+export default isGameOver();
 const isGameOver = (health) => {///pretty straightforward
     return health <= 0;
 };
+
+export default printToScreen();
 const printToScreen = () => {///// modify to set where Adam wants them
     document.getElementById('opponent-health').innerText = opponent.health;
     document.getElementById('player-health').innerText = character.health;
-}
-printToScreen();
+    printToScreen();
+};
+
+
+export default fightingLogic
