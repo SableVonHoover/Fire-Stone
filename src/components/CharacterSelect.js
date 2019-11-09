@@ -16,23 +16,15 @@ import { withRouter } from "react-router";
 import app from "../js/firebaseConfig";
 import API from "../utils/API";
 
-const SignUp = ({ history }) => {
-  const handleSignUp = useCallback(
+const CharacterSelect = ({ history }) => {
+  const handleCharacter = useCallback(
     async event => {
       event.preventDefault();
-      const { email, password, username } = event.target.elements;
+      //const { email, password, username } = event.target.elements;
       try {
         await app
-          //This is Firebase's function that create's a new user in the firebase DB
-          .auth()
-          .createUserWithEmailAndPassword(email.value, password.value);
 
-          //Save the user to the mongoose DB
-          API.makeUser({
-            email: email.value,
-            username: username.value
-          })
-            .catch(err => console.log(err));
+        //TODO: Populate with user's character choice and associate it with user id from collection
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route
@@ -43,7 +35,6 @@ const SignUp = ({ history }) => {
     },
     [history]
   );
-
 
   const useStyles = makeStyles(theme => ({
     "@global": {
@@ -96,46 +87,10 @@ const SignUp = ({ history }) => {
           <LockOutlinedIcon />
         </Avatar> */}
         <Typography component="h1" variant="h5">
-          Sign Up
+          Select a Character!
         </Typography>
-        <form className={classes.form} noValidate onSubmit={handleSignUp}>
-        <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label="User Name"
-            name="username"
-            autoComplete="username"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+        <form className={classes.form} noValidate onSubmit={handleCharacter}>
+        
           <Button
             type="submit"
             fullWidth
@@ -143,7 +98,7 @@ const SignUp = ({ history }) => {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Make Selection
           </Button>
           {/* <Grid container>
             <Grid item xs>
@@ -163,4 +118,4 @@ const SignUp = ({ history }) => {
   );
 };
 
-export default withRouter(SignUp);
+export default withRouter(CharacterSelect);
