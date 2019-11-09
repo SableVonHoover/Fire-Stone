@@ -5,11 +5,14 @@ import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import MenuIcon from "@material-ui/icons/Menu";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
-import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import ContactsIcon from '@material-ui/icons/Contacts';
-import HelpIcon from '@material-ui/icons/Help';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
+import ContactsIcon from "@material-ui/icons/Contacts";
+import HelpIcon from "@material-ui/icons/Help";
+import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import AddIcon from "@material-ui/icons/Add";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import app from "../js/firebaseConfig";
+
 // import ViewContainer from "./ViewContainer";
 
 const useStyles = makeStyles(theme => ({
@@ -20,8 +23,8 @@ const useStyles = makeStyles(theme => ({
   },
   speedDial: {
     position: "absolute",
-    bottom: theme.spacing(2),
-    right: theme.spacing(4)
+    bottom: theme.spacing(0),
+    right: theme.spacing(0)
   }
 }));
 
@@ -30,7 +33,8 @@ const actions = [
   { icon: <ContactsIcon />, name: "AboutUs" },
   { icon: <HelpIcon />, name: "Instructions" },
   { icon: <AssignmentIndIcon />, name: "SignIn" },
-  { icon: <AddIcon />, name: "SignUp" }
+  { icon: <AddIcon />, name: "SignUp" },
+  { icon: <ExitToAppIcon />, name: "SignOut" }
 ];
 
 export default function PopAction(props) {
@@ -70,9 +74,15 @@ export default function PopAction(props) {
             tooltipTitle={action.name}
             tooltipOpen
             onClick={() => {
+              if (action.name === "SignOut") {
+                app.auth().signOut();
+                props.handleComponentChange("SignIn");
+                handleClose();
+              } else {
                 props.handleComponentChange(action.name);
+                handleClose();
               }
-            }
+            }}
           />
         ))}
       </SpeedDial>

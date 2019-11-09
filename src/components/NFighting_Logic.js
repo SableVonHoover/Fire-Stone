@@ -1,4 +1,8 @@
 
+// import React from "react";
+// import "../utils/API";
+// import Login from "./SignIn.js";
+
 var character = {
     name: "Ryan",
     health: 100,
@@ -9,6 +13,7 @@ var character = {
         1, 1000000
     ]
 };
+
 
 let opponent = {
     name: "Jerry",
