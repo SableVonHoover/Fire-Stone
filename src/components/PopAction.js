@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
+import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
+import TouchAppIcon from "@material-ui/icons/TouchApp";
 import MenuIcon from "@material-ui/icons/Menu";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
@@ -12,6 +14,7 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import AddIcon from "@material-ui/icons/Add";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import app from "../js/firebaseConfig";
+import { red } from "ansi-colors";
 
 // import ViewContainer from "./ViewContainer";
 
@@ -61,11 +64,13 @@ export default function PopAction(props) {
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         className={classes.speedDial}
+        direction="up"
         hidden={hidden}
-        icon={<MenuIcon />}
+        icon={<SpeedDialIcon icon={<TouchAppIcon />} openIcon={<MenuIcon />} />}
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
+        style={{backgroundColor: red}}
       >
         {actions.map(action => (
           <SpeedDialAction
