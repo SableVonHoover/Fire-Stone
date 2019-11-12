@@ -1,10 +1,16 @@
-const endGame = (message) => {
-    document.getElementById('game-message').innerText = message;
-    document.getElementById('attack-button-1').hidden = true;
-    document.getElementById('attack-button-2').hidden = true;
-    document.getElementById('restart-button').hidden = false;
-};
+/* eslint-disable no-use-before-define */
+import React from "react";
+//import determineAttack from "./DetermineAttack";
+//import isGameOver from "./IsGameOver";
+//import endGame from "./EndGame_Logic";
+//import primaryAttackFunction from "./PrimaryAttack";
+import printToScreen from "./PrintToScreen";
+//import secondaryAttackFunction from "./SecondaryAttack";
+//import MediaCard from "../fighterCard";
+//import MediaCard2 from "../fighterCard2";
 
+
+export default restart();
 const restart = () => {
     let primaryButton = document.getElementById('attack-button-1');
     let secondaryButton = document.getElementById('attack-button-2');

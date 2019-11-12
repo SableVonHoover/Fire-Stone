@@ -11,7 +11,6 @@ import "../css/App.css";
 import Knight from "../images/knight.gif";
 import Wizard from "../images/wizard.gif";
 
-import "./NFighting_Logic";
 
 const useStyles = makeStyles({
   card: {
