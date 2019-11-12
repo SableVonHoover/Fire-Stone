@@ -1,12 +1,14 @@
+/* eslint-disable no-use-before-define */
 import React from "react";
-import fightingLogic from "./NFighting_Logic";
+//import determineAttack from "./DetermineAttack";
+//import isGameOver from "./IsGameOver";
+//import endGame from "./EndGame_Logic";
+//import primaryAttackFunction from "./PrimaryAttack";
+import printToScreen from "./PrintToScreen";
+//import secondaryAttackFunction from "./SecondaryAttack";
+//import MediaCard from "../fighterCard";
+//import MediaCard2 from "../fighterCard2";
 
-export default endGame();
-const endGame = (message) => {
-    document.getElementById('attack-button-1').hidden = true;
-    document.getElementById('attack-button-2').hidden = true;
-    document.getElementById('restart-button').hidden = false;
-};
 
 export default restart();
 const restart = () => {
