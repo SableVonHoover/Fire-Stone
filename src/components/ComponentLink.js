@@ -20,6 +20,21 @@ import Copyright from "./Copyright";
 import Box from "@material-ui/core/Box";
 import Grow from "@material-ui/core/Grow";
 import BackdropFilter from "react-backdrop-filter";
+import { StyleSheet, ImageBackground } from "react-native";
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    width: "100vw",
+    height: "100vh",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "center",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)"
+  }
+});
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -97,18 +112,28 @@ export default class ButtonActions extends Component {
     return (
       <Container component="main" maxWidth="xl" align="center" justify="center">
         <CssBaseline />
-        <div className="body">
-          <Grid container className="container">
+        <div>
+          <Grid container>
             <Grid item xs>
-              <Card className="card">
+              <Card className="card" elevation={10}>
                 <PopAction
                   currentComponent={this.state.currentComponent}
                   handleComponentChange={this.handleComponentChange}
+                  elevation={10}
                 />
-                {this.renderComponent()}
-                <Box mt={4}>
-                  <Copyright />
-                </Box>
+                <ImageBackground
+                  blurRadius={10}
+                  source={{
+                    uri:
+                      "https://images.pexels.com/photos/539986/pexels-photo-539986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  }}
+                  style={styles.Container}
+                >
+                  {this.renderComponent()}
+                  <Box mt={4}>
+                    <Copyright />
+                  </Box>
+                </ImageBackground>
               </Card>
             </Grid>
           </Grid>
