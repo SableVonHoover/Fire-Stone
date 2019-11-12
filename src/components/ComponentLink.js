@@ -9,10 +9,11 @@ import SignUp from "./SignUp";
 import Card from "@material-ui/core/Card";
 import PopAction from "./PopAction";
 import { AutoRotatingCarousel } from "material-auto-rotating-carousel";
-import PeterTan from "./PeterTan";
-import AdamNewman from "./AdamNewman";
-import NicholasShipley from "./NicholasShipley";
-import SableHoover from "./SableHoover";
+import Landing from "./landing";
+import PeterTan from "./AboutSlides/PeterTan";
+import AdamNewman from "./AboutSlides/AdamNewman";
+import NicholasShipley from "./AboutSlides/NicholasShipley";
+import SableHoover from "./AboutSlides/SableHoover";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
 
 export default class ButtonActions extends Component {
   state = {
-    currentComponent: "SignIn"
+    currentComponent: "Landing"
   };
 
   handleComponentChange = component => {
@@ -76,7 +77,7 @@ export default class ButtonActions extends Component {
               this.handleComponentChange("Instructions");
             }}
             onClose={() => {
-              this.handleComponentChange("");
+              this.handleComponentChange("Landing");
             }}
             interval={8000}
           >
@@ -103,6 +104,12 @@ export default class ButtonActions extends Component {
       return (
         <Grow in={!false}>
           <SignUp />
+        </Grow>
+      );
+    } else if (this.state.currentComponent === "Landing") {
+      return (
+        <Grow in={!false}>
+          <Landing />
         </Grow>
       );
     }
