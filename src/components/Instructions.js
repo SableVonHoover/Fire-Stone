@@ -8,6 +8,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Copyright from "./Copyright";
 import Grid from "@material-ui/core/Grid";
+import Background from "../images/FireBG.gif";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -28,46 +29,39 @@ export default function Instructions() {
 
   return (
     <Container component="main" maxWidth="xs" align="center" justify="center">
-      <div className={classes.paper} style={{ backgroundColor: "lightgray" }}>
+      <div className={classes.paper}>
         <CssBaseline />
         <Paper
           style={{
             height: "60vh",
             width: "60vw",
             backgroundColor: "black",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover"
           }}
           className="paper"
         >
-          <Grid container>
-            <Grid item xs={12}>
-              <div id="intro"> Welcome, brave warrior, to.....</div>
-            </Grid>
-            <Grid item xs={12}>
-              <div id="logo"></div>
-            </Grid>
-            <Grid item xs={12}>
-              <div id="scroller">
-                <div>
-                  <p>
-                    Blah blah blah blah blah blah Blah blah blah blah blah
-                    blahBlah blah blah blah blah blah.
-                  </p>
-                  <p>
-                    Blah blah blah blah blah blahBlah blah blah blah blah
-                    blahBlah blah blah blah blah blahBlah blah blah blah blah
-                    blah
-                  </p>
-                  <p>
-                    Blah blah blah blah blah blahBlah blah blah blah blah
-                    blahBlah blah blah blah blah blahBlah blah blah blah blah
-                    blahBlah blah blah blah blah blahBlah blah blah blah blah
-                    blah
-                  </p>
-                </div>
-              </div>
-            </Grid>
-          </Grid>
+          <div id="intro">Welcome, brave warrior, to...</div>
+          <div id="logo">
+            <h1 id="FireWords" class="font-effect-fire-animation">
+              FireStone
+            </h1>
+          </div>
+          <div id="titles">
+            <div id="titlecontent">
+              ​<p>It has fallen to you...</p>
+              <br></br>
+              <p>The fate of all kind is in your hands.</p>
+              <br></br>
+              <p>Choose your champion. </p>​<p>Battle your opponent </p>
+              <p>But choose wisely between your 2 attacks!</p>
+              <p>Gain experience, gain strength</p>
+              <p>Save the day!</p>
+              Good luck, Brave One. ​
+            </div>
+          </div>
+          ​ ​
         </Paper>
       </div>
     </Container>
