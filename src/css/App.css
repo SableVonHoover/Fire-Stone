@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -15,13 +14,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;width: 100vw;
-  background: url('https://media.giphy.com/media/2kVnG2Ra5JddsZumbr/giphy.gif') no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  color: white;
 }
 
 .App-link {
@@ -69,69 +62,91 @@
 #intro {
   opacity: 0;
   position: absolute;
-  left: 50%;
+  width: 40%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  /* text-align: center; */
-  color: rgb(75, 213, 238);
-  font-size: 200%;
+  transform: translateY(-50%);    
+  text-align: center;
+  margin-left: 150px;
+  color: white;
   font-family: 'Press Start 2P', cursive;
-  animation: intro 90s ease-out infinite;
+  font-size: 150%;
+  animation: intro 100s ease-out infinite;
+  z-index: 1;
 }
+
+#FireWords {
+letter-spacing: 4px;
+font-family: 'Press Start 2P', cursive;
+}
+
+
+
+
 
 #logo {
+  z-index: 1;
   opacity: 0;
   position: absolute;
-  width: 50%;
+  width: 80%;
   left: 50%;
-  height: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%); 
-animation: logo 80s ease-out infinite; 
+  height: 60%;
+  top: 70%;
+transform: translateX(-50%) translateY(-50%); 
+animation: logo 100s ease-out; 
+/* background-image: url(../images/FireLogo.jpg); */
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center center; 
+border-radius: 80%;
 }
 
-#scroller {
-  position: absolute;
-  width: 80vw;
-  /* margin: 0 0 0 20%; */
-  height: 100%;
-  left: 50%;
-  top: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 250%;
+#titles
+{
+	position: absolute;
+	width: 18em;
+	height: 50em;
+	bottom: 0;
+	left: 50%;
+	margin-left: -9em;
+	font-size: 250%;
+	font-weight: bold;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+}
+
+#titles:after
+{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  pointer-events: none;
   font-family: 'Press Start 2P', cursive;
-  text-align: center;    
-  color:blue;
-  transform: perspective(200px) rotateX(30deg);
 }
 
-#scroller div {
-  position: absolute;
-  top: 100%;
-  animation: scroller 80s linear infinite;
+#titlecontent
+{
+  margin-left: 20px;
+	position: absolute;
+	top: 100%;
+  animation: scroll 150s linear 4s infinite;
+  animation-delay: 15s;
+  color: white;
   font-family: 'Press Start 2P', cursive;
-
 }
 
-#scroller p { 
-margin: 1.35em 0 1.85em 0;
-line-height: 1.35em; 
-font-family: Arial, Helvetica, sans-serif;
-font-family: 'Press Start 2P', cursive;
-
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
 }
-/* 
-body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  font: 700 1em;
-  
-  letter-spacing:.15em;
-} */
 
-/* ANIMATIONS */
+
+
 
 @keyframes intro {
   0% {
@@ -168,32 +183,38 @@ body {
 } 
 }
 
-@keyframes scroller {
-  0% {
-      top: 100%;
-      opacity: 0;
-  }
-  7% {
-      top: 100%;
-      opacity: 1;
-  }
-  95% {
-      opacity: 1;
-  }
-  100% {
-      top: -250%;
-      opacity: 0;
-  }
-}
 
-#logo {
-  background-image: url(../images/FireLogo.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center; 
-  border-radius: 70%;
-}
+
+
+
 
 
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+
+@import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation);
+html {
+  background: #ddd;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 60px;
+}
+
+.FightButton {
+
+  background-color: black;
+  height: 80px;
+  width: 400px;
+  font-size: 20px;
+}
+
+#FireWordsButton {
+  margin-bottom: auto; 
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 30px ;
+  font-family: 'Press Start 2P', cursive;
+  }

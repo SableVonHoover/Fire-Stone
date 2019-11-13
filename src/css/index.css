@@ -13,14 +13,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* html {  
+html {  
   background: url('https://images.pexels.com/photos/1637438/pexels-photo-1637438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-} */
+}
 
 .card {
   background: transparent;

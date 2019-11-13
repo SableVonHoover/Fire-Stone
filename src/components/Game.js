@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-//import "../css/App.css";
+import "../css/App.css";
 import Arena from "../images/arena.jpg";
 import Container from "@material-ui/core/Container";
 import MediaCard from "./fighterCard";
@@ -11,6 +11,7 @@ import MediaCard2 from "./fighterCard2";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Grow from "@material-ui/core/Grow";
+// import AudioPlayer from "./audio"
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -37,18 +38,22 @@ export default function Game() {
 
   return (
     <Container component="main" maxWidth="xl" align="center" justify="center">
+      
       <CssBaseline />
       <div className={classes.paper}>
-        <Button
+        <Button class = "FightButton"
+    
           onClick={handleVisibility}
           style={{
             position: "absolute",
             left: "50%",
             top: "50%",
-            transform: "translate(-50%, -50%)"
+            transform: "translate(-50%, -50%)",
+          
+          
           }}
         >
-          Click to Start!
+          <h1 id="FireWordsButton" class="font-effect-fire-animation">Let's Play FireStone</h1>
         </Button>
         <Grow
           in={!hidden}
@@ -65,7 +70,8 @@ export default function Game() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundImage: "url(" + Arena + ")",
-              backgroundRepeat: "no-repeat"
+              backgroundRepeat: "no-repeat",
+              
             }}
             hidden={hidden}
           >
@@ -75,6 +81,7 @@ export default function Game() {
               </Grid>
               <Grid item xs={6}>
                 <MediaCard2></MediaCard2>
+                {/* <AudioPlayer></AudioPlayer> */}
               </Grid>
             </Grid>
           </Paper>

@@ -1,13 +1,13 @@
 // DO NOT REMOVE, APPARENTLY ESSENTIAL FOR TRAVIS TO PASS
 
 import React from "react";
-import logo from "../images/FireLogo2.png";
+// import logo from "../images/FireLogo2.png";
 import "../css/App.css";
 
 function Landing() {
   return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <p>Welcome to FireStone!!!</p>
       <a
         className="App-link"

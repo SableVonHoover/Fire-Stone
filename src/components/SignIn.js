@@ -15,7 +15,6 @@ import Container from "@material-ui/core/Container";
 import { withRouter, Redirect } from "react-router";
 import app from "../js/firebaseConfig";
 import { AuthContext } from "../js/auth.js";
-import { red } from "@material-ui/core/colors";
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -42,7 +41,7 @@ const Login = ({ history }) => {
   const useStyles = makeStyles(theme => ({
     "@global": {
       body: {
-        backgroundColor: theme.palette.common.black
+        backgroundColor: theme.palette.common.white
       }
     },
     paper: {
@@ -52,7 +51,7 @@ const Login = ({ history }) => {
       alignItems: "center"
     },
     avatar: {
-      margin: theme.spacing(4),
+      margin: theme.spacing(1),
       backgroundColor: theme.palette.secondary.main
     },
     form: {

@@ -9,11 +9,10 @@ import SignUp from "./SignUp";
 import Card from "@material-ui/core/Card";
 import PopAction from "./PopAction";
 import { AutoRotatingCarousel } from "material-auto-rotating-carousel";
-import Landing from "./landing";
-import PeterTan from "./AboutSlides/PeterTan";
-import AdamNewman from "./AboutSlides/AdamNewman";
-import NicholasShipley from "./AboutSlides/NicholasShipley";
-import SableHoover from "./AboutSlides/SableHoover";
+import PeterTan from "./PeterTan";
+import AdamNewman from "./AdamNewman";
+import NicholasShipley from "./NicholasShipley";
+import SableHoover from "./SableHoover";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -21,21 +20,6 @@ import Copyright from "./Copyright";
 import Box from "@material-ui/core/Box";
 import Grow from "@material-ui/core/Grow";
 import BackdropFilter from "react-backdrop-filter";
-import { StyleSheet, ImageBackground } from "react-native";
-
-const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    width: "100vw",
-    height: "100vh",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "center",
-    left: "50%",
-    top: "50%",
-    transform: "translate(-50%, -50%)"
-  }
-});
 
 const useStyles = makeStyles(theme => ({
   "@global": {
@@ -53,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 
 export default class ButtonActions extends Component {
   state = {
-    currentComponent: "Landing"
+    currentComponent: "SignIn"
   };
 
   handleComponentChange = component => {
@@ -77,7 +61,7 @@ export default class ButtonActions extends Component {
               this.handleComponentChange("Instructions");
             }}
             onClose={() => {
-              this.handleComponentChange("Landing");
+              this.handleComponentChange("");
             }}
             interval={8000}
           >
@@ -106,12 +90,6 @@ export default class ButtonActions extends Component {
           <SignUp />
         </Grow>
       );
-    } else if (this.state.currentComponent === "Landing") {
-      return (
-        <Grow in={!false}>
-          <Landing />
-        </Grow>
-      );
     }
   };
 
@@ -119,28 +97,18 @@ export default class ButtonActions extends Component {
     return (
       <Container component="main" maxWidth="xl" align="center" justify="center">
         <CssBaseline />
-        <div>
-          <Grid container>
+        <div className="body">
+          <Grid container className="container">
             <Grid item xs>
-              <Card className="card" elevation={10}>
+              <Card className="card">
                 <PopAction
                   currentComponent={this.state.currentComponent}
                   handleComponentChange={this.handleComponentChange}
-                  elevation={10}
                 />
-                <ImageBackground
-                  blurRadius={10}
-                  source={{
-                    uri:
-                      "https://images.pexels.com/photos/539986/pexels-photo-539986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  }}
-                  style={styles.Container}
-                >
-                  {this.renderComponent()}
-                  <Box mt={4}>
-                    <Copyright />
-                  </Box>
-                </ImageBackground>
+                {this.renderComponent()}
+                <Box mt={4}>
+                  <Copyright />
+                </Box>
               </Card>
             </Grid>
           </Grid>
