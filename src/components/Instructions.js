@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Copyright from "./Copyright";
 import Grid from "@material-ui/core/Grid";
-import Background from "../images/FireBG.gif";
+// import Background from "../images/FireBG.gif";
 
 const useStyles = makeStyles(theme => ({
   "@global": {
