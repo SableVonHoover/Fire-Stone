@@ -22,6 +22,7 @@ import Box from "@material-ui/core/Box";
 import Grow from "@material-ui/core/Grow";
 import BackdropFilter from "react-backdrop-filter";
 import { StyleSheet, ImageBackground } from "react-native";
+import CharacterSelect from "./CharacterSelect";
 
 const styles = StyleSheet.create({
   Container: {
@@ -52,10 +53,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default class ButtonActions extends Component {
-  state = {
-    currentComponent: "Landing"
-  };
-
+  constructor(currentComponent) {
+    super(currentComponent);
+    this.state = {
+      currentComponent: "Landing"
+    };
+  }
+  
   handleComponentChange = component => {
     this.setState({ currentComponent: component });
   };
@@ -110,6 +114,12 @@ export default class ButtonActions extends Component {
       return (
         <Grow in={!false}>
           <Landing />
+        </Grow>
+      );
+    } else if (this.state.currentComponent === "CharacterSelect") {
+      return (
+        <Grow in={!false}>
+          <CharacterSelect />
         </Grow>
       );
     }

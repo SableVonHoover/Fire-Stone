@@ -25,6 +25,8 @@ const CharacterSelect = ({ history }) => {
         await app
 
         //TODO: Populate with user's character choice and associate it with user id from collection
+        let currentFBUserEmail = app.firebase.auth().currentUser.email;
+        console.log(currentFBUserEmail);
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route
