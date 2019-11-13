@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     height: "100vh",
     justifyContent: "center",
     alignItems: "center",
-    position: "center",
+    position: "absolute",
     left: "50%",
     top: "50%",
     transform: "translate(-50%, -50%)"
@@ -107,7 +107,7 @@ export default class ButtonActions extends Component {
     } else if (this.state.currentComponent === "SignUp") {
       return (
         <Grow in={!false}>
-          <SignUp />
+          <SignUp currentComponent={this.state.currentComponent} handleComponentChange={this.handleComponentChange}/>
         </Grow>
       );
     } else if (this.state.currentComponent === "Landing") {

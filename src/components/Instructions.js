@@ -8,6 +8,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Copyright from "./Copyright";
 import Grid from "@material-ui/core/Grid";
+import zIndex from "@material-ui/core/styles/zIndex";
 // import Background from "../images/FireBG.gif";
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +39,9 @@ export default function Instructions() {
             backgroundColor: "black",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
+            overflow: "hidden",
+            zIndex: "-1"
           }}
           className="paper"
         >
@@ -48,7 +51,7 @@ export default function Instructions() {
               FireStone
             </h1>
           </div>
-          <div id="titles">
+          <div id="titles" style={{ overflow: "hidden"}}>
             <div id="titlecontent">
               ​<p>It has fallen to you...</p>
               <br></br>

@@ -41,13 +41,14 @@ export default function Game() {
       <CssBaseline />
       <div className={classes.paper}>
         <Button
-          class="FightButton"
+          className="FightButton"
           onClick={handleVisibility}
           style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)"
+            // position: "absolute",
+            // left: "50%",
+            // top: "50%",
+            // transform: "translate(-50%, -50%)",
+            marginBottom: "3px"            
           }}
         >
           <h1 id="FireWordsButton" class="font-effect-fire-animation">

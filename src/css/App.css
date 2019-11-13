@@ -7,15 +7,15 @@
  
 
  .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;width: 100vw;
-  background: url('https://media.giphy.com/media/2kVnG2Ra5JddsZumbr/giphy.gif') no-repeat center center fixed;
+  color: white;
+  width: 100vw;
+  background: no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   -webkit-background-size: cover;
@@ -98,7 +98,7 @@
      text-align: justify;
      overflow: hidden;
      transform-origin: 50% 100%;
-     transform: perspective(300px) rotateX(25deg);
+     transform: perspective(18.75rem) rotateX(25deg);
  }
  #titles:after
  {
@@ -114,10 +114,11 @@
  }
  #titlecontent
  {
-  margin-left: 20px;
+  margin-left: 1.25rem;
      position: absolute;
      top: 100%;
-  animation: scroll 150s linear 4s infinite;
+    overflow: hidden;
+  animation: scroll 150s linear 4s;
   animation-delay: 15s;
   color: white;
   font-family: 'Press Start 2P', cursive;
@@ -166,18 +167,18 @@
  }
  h1 {
   font-family: 'Anton', sans-serif;
-  font-size: 60px;
+  font-size: 3.75rem;
  }
  .FightButton {
   background-color: black;
-  height: 80px;
-  width: 400px;
-  font-size: 20px;
+  height: 5rem;
+  width: 25rem;
+  font-size: 1.25rem;
  }
  #FireWordsButton {
   margin-bottom: auto;
-  font-size: 20px;
-  letter-spacing: 4px;
-  line-height: 30px ;
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+  line-height: 1.875rem ;
   font-family: 'Press Start 2P', cursive;
   }
