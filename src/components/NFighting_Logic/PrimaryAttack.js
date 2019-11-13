@@ -8,6 +8,8 @@ import printToScreen from "./PrintToScreen";
 //import MediaCard from "../fighterCard";
 //import MediaCard2 from "../fighterCard2";
 /* eslint-disable no-use-before-define */
+import character from "./Character";
+import opponent from "./Enemy";
 
 export default primaryAttackFunction();
 const primaryAttackFunction = () => {
@@ -24,7 +26,7 @@ const primaryAttackFunction = () => {
     };
     primaryButton.disabled = true;
     secondaryButton.disabled = true; /// so you can't attack until opponent attack has gone through
-    gameMessage.innerText = "Opponent is about to wreck your shit."
+    //gameMessage.innerText = "Opponent is about to wreck your shit."
     /////////////////////////////////
     setTimeout(() => {
         let opponentAttack = determineAttack(opponent.attack, character.defense, opponent.level, opponent.baseDamage[0]);///same as playerAttack

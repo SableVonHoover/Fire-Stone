@@ -8,6 +8,8 @@ import secondaryAttackFunction from "./SecondaryAttack";
 import MediaCard from "../fighterCard";
 import MediaCard2 from "../fighterCard2";*/
 /* eslint-disable no-use-before-define */
+import character from "./Character";
+import opponent from "./Enemy";
 
 export default isGameOver();
 const isGameOver = (health) => {///pretty straightforward
