@@ -15,6 +15,8 @@ import Container from "@material-ui/core/Container";
 import { withRouter } from "react-router";
 import app from "../js/firebaseConfig";
 import API from "../utils/API";
+import ButtonActions from "./ComponentLink";
+
 
 const SignUp = ({ history }) => {
   const handleSignUp = useCallback(
@@ -28,15 +30,18 @@ const SignUp = ({ history }) => {
           .createUserWithEmailAndPassword(email.value, password.value);
 
           //Save the user to the mongoose DB
-          API.makeUser({
-            email: email.value,
-            username: username.value
-          })
-            .catch(err => console.log(err));
+          // API.makeUser({
+          //   email: email.value,
+          //   username: username.value
+          // })
+          // .catch(err => console.log(err));
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route
-        history.push("/");
+
+        new update();
+
+        // history.push("/");
       } catch (error) {
         alert(error);
       }
@@ -72,6 +77,23 @@ const SignUp = ({ history }) => {
   }));
 
   const classes = useStyles;
+
+  class update extends ButtonActions {
+    constructor(currentComponent) {
+      super(currentComponent);
+
+      //Reassigns the currentComponent property to page(component) we want to redirect to
+      this.state.currentComponent = "CharacterSelect";
+      console.log(this.state.currentComponent);
+
+      //TODO: Call renderComponent function correctly to refresh currently show component
+      this.renderComponent();
+    }
+
+    
+    // handleComponentChange();
+
+}
 
   return (
     // <div>
