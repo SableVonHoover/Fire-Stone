@@ -1,4 +1,4 @@
-import { View, Animated } from "react-native"; 
+/*import { View, Animated } from "react-native"; 
 import CustomText from "../CustomText";
 
 const available_width = 100; // add this
@@ -66,4 +66,4 @@ const available_width = 100; // add this
             });
           });
         }
-      }
+      }*/

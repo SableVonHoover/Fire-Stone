@@ -7,7 +7,8 @@ import printToScreen from "./PrintToScreen";
 //import restart from "./Restart";
 //import MediaCard from "../fighterCard";
 //import MediaCard2 from "../fighterCard2";
-
+import character from "./Character";
+import opponent from "./Enemy";
 
 // eslint-disable-next-line no-use-before-define
 export default secondaryAttackFunction();
