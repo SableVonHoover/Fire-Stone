@@ -43,6 +43,79 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.select-choice {
+  width: 12.5rem;
+  height: 12.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 10px;  
+  position: relative;
+}
+
+.select-choice::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: 12px; /* !importanté */
+  background: red;
+}
+
+
+.select-choice:hover::before {
+  animation: spinningGradient 0.5s ease-in-out infinite;
+}
+
+.select-choice::selection::before {
+  outline: 1px solid black
+}
+
+@keyframes spinningGradient {
+  0%{ background: linear-gradient(0turn,#ffffff, cyan, gold); }
+  10%{ background: linear-gradient(0.05turn,#ffffff, cyan, gold); }
+  20%{ background: linear-gradient(0.1turn,#ffffff, cyan, gold); }
+  30%{ background: linear-gradient(0.15turn,#ffffff, cyan, gold); }
+  40%{ background: linear-gradient(0.2turn,#ffffff, cyan, gold); }
+  50%{ background: linear-gradient(0.25turn,#ffffff, cyan, gold); }
+  60%{ background: linear-gradient(0.3turn,#ffffff, cyan, gold); }
+  70%{ background: linear-gradient(0.35turn,#ffffff, cyan, gold); }
+  80%{ background: linear-gradient(0.4turn,#ffffff, cyan, gold); }
+  90%{ background: linear-gradient(0.45turn,#ffffff, cyan, gold); }
+  100%{ background: linear-gradient(0.5turn,#ffffff, cyan, gold); }
+}
+
+@keyframes spinningBorderGradient {
+  0%{ outline-color: linear-gradient(0turn,#ffffff, cyan, gold); }
+  10%{ outline-color: linear-gradient(0.05turn,#ffffff, cyan, gold); }
+  20%{ outline-color: linear-gradient(0.1turn,#ffffff, cyan, gold); }
+  30%{ outline-color: linear-gradient(0.15turn,#ffffff, cyan, gold); }
+  40%{ outline-color: linear-gradient(0.2turn,#ffffff, cyan, gold); }
+  50%{ outline-color: linear-gradient(0.25turn,#ffffff, cyan, gold); }
+  60%{ outline-color: linear-gradient(0.3turn,#ffffff, cyan, gold); }
+  70%{ outline-color: linear-gradient(0.35turn,#ffffff, cyan, gold); }
+  80%{ outline-color: linear-gradient(0.4turn,#ffffff, cyan, gold); }
+  90%{ outline-color: linear-gradient(0.45turn,#ffffff, cyan, gold); }
+  100%{ outline-color: linear-gradient(0.5turn,#ffffff, cyan, gold); }
+}
+
+@media (max-width: 768px) {
+  .select-choice {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {  
+  .select-choice {
+    width: 90px;
+    height: 90px;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -15,6 +15,13 @@ import Container from "@material-ui/core/Container";
 import { withRouter } from "react-router";
 import app from "../js/firebaseConfig";
 import API from "../utils/API";
+import SelectChoice from "./Selection";
+import characters from "./Characters.json";
+// import Card from "@material-ui/core/Card";
+
+characters.forEach(character => {
+  character.image = require("../images/" + character.image);
+});
 
 const CharacterSelect = ({ history }) => {
   const handleCharacter = useCallback(
@@ -22,7 +29,7 @@ const CharacterSelect = ({ history }) => {
       event.preventDefault();
       //const { email, password, username } = event.target.elements;
       try {
-        await app
+        await app;
 
         //TODO: Populate with user's character choice and associate it with user id from collection
         let currentFBUserEmail = app.firebase.auth().currentUser.email;
@@ -38,6 +45,19 @@ const CharacterSelect = ({ history }) => {
     [history]
   );
 
+  const characterOptions = () => {
+    return characters.map(character => (
+      <Button type="submit">
+        <SelectChoice
+          key={character.id}
+          id={character.id}
+          image={character.image}
+        />
+        Select this character
+      </Button>
+    ));
+  };
+
   const useStyles = makeStyles(theme => ({
     "@global": {
       body: {
@@ -45,6 +65,7 @@ const CharacterSelect = ({ history }) => {
       }
     },
     paper: {
+      paddingTop: theme.spacing(3),
       marginTop: theme.spacing(8),
       display: "flex",
       flexDirection: "column",
@@ -92,16 +113,17 @@ const CharacterSelect = ({ history }) => {
           Select a Character!
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleCharacter}>
-        
-          <Button
+          {/*render character options*/}
+          {characterOptions()}
+          {/* <Button
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
             className={classes.submit}
           >
             Make Selection
-          </Button>
+          </Button> */}
           {/* <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
