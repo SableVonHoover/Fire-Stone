@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from 'react-dom';
 import determineAttack from "./DetermineAttack";
 import isGameOver from "./IsGameOver";
 import endGame from "./EndGame_Logic";

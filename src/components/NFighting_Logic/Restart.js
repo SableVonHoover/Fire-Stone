@@ -8,13 +8,15 @@ import printToScreen from "./PrintToScreen";
 //import secondaryAttackFunction from "./SecondaryAttack";
 //import MediaCard from "../fighterCard";
 //import MediaCard2 from "../fighterCard2";
+import character from "./Character";
+import opponent from "./Enemy";
 
 
 export default restart();
 const restart = () => {
     let primaryButton = document.getElementById('attack-button-1');
     let secondaryButton = document.getElementById('attack-button-2');
-    player.health = 100;
+    character.health = 100;
     opponent.health = 100;
     document.getElementById('game-message').innerText = '';
     primaryButton.disabled = false;
