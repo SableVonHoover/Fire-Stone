@@ -34,12 +34,23 @@ export default function MediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
+       
+      <Button id="attack-button-1" onclick="attack()">
+        hit em
+      </Button>
+      <Button id="attack-button-2" onclick="attack()">
+        hit em
+      </Button>
+      {/* <Button id="restart-button" hidden="true" onClick="restart()">
+        Restart game
+      </Button> */}
+      <h3 id="game-message"></h3>
           <img
             src={Knight}
             style={{
               textAlign: "center",
-              height: 250,
-              width: 250,
+              height: 180,
+              width: 180,
               transform: "rotatey(180deg)"
             }}
             alt=""
@@ -52,6 +63,10 @@ export default function MediaCard() {
         width: 250,
 
         }}/> */}
+
+<h3 class="GoodHealth">
+         Health <span id="player-health">---</span>
+      </h3>
         </CardContent>
       </CardActionArea>
       <CardActions style={{ textAlign: "center" }}>
@@ -63,19 +78,7 @@ export default function MediaCard() {
         </Button> */}
       </CardActions>
 
-      <h3>
-        Your Health <span id="player-health"></span>
-      </h3>
-      <Button id="attack-button-1" onclick="attack()">
-        hit em
-      </Button>
-      <Button id="attack-button-2" onclick="attack()">
-        hit em
-      </Button>
-      <Button id="restart-button" hidden="true" onClick="restart()">
-        Restart game
-      </Button>
-      <h3 id="game-message"></h3>
+     
     </Card>
   );
 }
