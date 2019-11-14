@@ -35,35 +35,41 @@ export default function MediaCard() {
         // title="Contemplative Reptile"
         />
         <CardContent>
-          {/* <img src={Dragon } className="dragon"
+        
+
+      <h3 id="game-message"></h3>
+          <img src={Dragon } className="dragon"
         style={{
-          height: 200, 
-          width: 190, 
-          transform: "rotatey(180deg)"
-          }} /> */}
-          <img
+          height: 220, 
+          width: 200, 
+          transform: "rotatey(180deg)",
+          marginLeft: 50
+
+          }} />
+          {/* <img
             src={Zombie}
             className="zombie"
             style={{
               height: 200,
-              width: 190
-            }}
-            alt=""
-          />
+              width: 190,
+              marginTop: 40
+            }} */}
+            
+          
           {/* <img src={Forest } className="forest"
         style={{
           height: 200, 
           width: 150, 
           
           }} /> */}
+
+         <h3 class="BadHealth">
+         Health <span id="opponent-health">---</span>
+      </h3>
         </CardContent>
       </CardActionArea>
       <CardActions style={{ textAlign: "center" }}></CardActions>
-      <h3>
-        Opponent Health <span id="opponent-health"></span>
-      </h3>
-
-      <h3 id="game-message"></h3>
+      
     </Card>
   );
 }

@@ -16,7 +16,7 @@ import { withRouter } from "react-router";
 import app from "../js/firebaseConfig";
 import API from "../utils/API";
 import SelectChoice from "./Selection";
-import characters from "./Characters.json";
+import characters from "./Characters.js";
 // import Card from "@material-ui/core/Card";
 
 characters.forEach(character => {
