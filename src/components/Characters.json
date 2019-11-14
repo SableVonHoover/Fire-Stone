@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "image": "knight.gif",
+    "name": "",
+    "level": 99,
+    "hitpoints": 999,
+    "attack": 99,
+    "defense": 255,
+    "speed": 28,
+    "attacks": ["Lava Lance", "Shield Bash", "Execute"]
+  },
+  {
+    "id": 2,
+    "image": "wizard.gif",
+    "name": "",
+    "level": 99,
+    "hitpoints": 999,
+    "attack": 255,
+    "defense": 99,
+    "speed": 28,
+    "attacks": ["Summon Meteors", "Mjolnir", "Ice Age"]
+  }
+]
