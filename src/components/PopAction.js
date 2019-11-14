@@ -20,7 +20,7 @@ import { red } from "ansi-colors";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: 500,
+    height: 0,
     transform: "translateZ(0px)",
     flexGrow: 1
   },

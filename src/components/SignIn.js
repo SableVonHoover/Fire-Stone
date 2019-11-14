@@ -16,6 +16,8 @@ import { withRouter, Redirect } from "react-router";
 import app from "../js/firebaseConfig";
 import { AuthContext } from "../js/auth.js";
 import { red } from "@material-ui/core/colors";
+import Landing from "./landing";
+import CharacterSelect from "./CharacterSelect";
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -65,7 +67,7 @@ const Login = ({ history }) => {
   }));
 
   if (currentUser) {
-    return <Redirect to="/" />;
+    return <Landing />;
   }
 
   const classes = useStyles;
@@ -103,10 +105,10 @@ const Login = ({ history }) => {
             id="password"
             autoComplete="current-password"
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
             type="submit"
             fullWidth
@@ -116,7 +118,7 @@ const Login = ({ history }) => {
           >
             Sign In
           </Button>
-          <Grid container>
+          {/* <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
@@ -127,7 +129,7 @@ const Login = ({ history }) => {
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
-          </Grid>
+          </Grid> */}
         </form>
       </div>
     </Container>

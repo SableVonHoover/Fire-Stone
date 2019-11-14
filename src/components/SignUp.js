@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,13 +12,17 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { withRouter } from "react-router";
+import { withRouter, Redirect } from "react-router";
+import { AuthContext } from "../js/auth.js";
 import app from "../js/firebaseConfig";
 import API from "../utils/API";
 import ButtonActions from "./ComponentLink";
-
+import CharacterSelect from "./CharacterSelect";
+import ReactDOM from "react-dom";
 
 const SignUp = ({ history }) => {
+  const { currentUser } = useContext(AuthContext);
+
   const handleSignUp = useCallback(
     async event => {
       event.preventDefault();
@@ -29,19 +33,19 @@ const SignUp = ({ history }) => {
           .auth()
           .createUserWithEmailAndPassword(email.value, password.value);
 
-          //Save the user to the mongoose DB
-          // API.makeUser({
-          //   email: email.value,
-          //   username: username.value
-          // })
-          // .catch(err => console.log(err));
+        //Save the user to the mongoose DB
+        // API.makeUser({
+        //   email: email.value,
+        //   username: username.value
+        // })
+        // .catch(err => console.log(err));
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route
 
-        new update();
+        // new update(<CharacterSelect />);
 
-        // history.push("/");
+        history.push("/");
       } catch (error) {
         alert(error);
       }
@@ -49,6 +53,9 @@ const SignUp = ({ history }) => {
     [history]
   );
 
+  if (currentUser) {
+    return <CharacterSelect />;
+  }
 
   const useStyles = makeStyles(theme => ({
     "@global": {
@@ -78,22 +85,17 @@ const SignUp = ({ history }) => {
 
   const classes = useStyles;
 
-  class update extends ButtonActions {
-    constructor(currentComponent) {
-      super(currentComponent);
+  // class update extends ButtonActions {
+  //   constructor(compoName) {
+  //     super(compoName);
 
-      //Reassigns the currentComponent property to page(component) we want to redirect to
-      this.state.currentComponent = "CharacterSelect";
-      console.log(this.state.currentComponent);
+  //     //Reassigns the currentComponent property to page(component) we want to redirect to
 
-      //TODO: Call renderComponent function correctly to refresh currently show component
-      this.renderComponent();
-    }
+  //     this.componentDidMount(this.handleComponentChange(compoName));
 
-    
-    // handleComponentChange();
-
-}
+  //     // handleComponentChange();
+  //   }
+  // }
 
   return (
     // <div>
@@ -121,7 +123,7 @@ const SignUp = ({ history }) => {
           Sign Up
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSignUp}>
-        <TextField
+          <TextField
             variant="outlined"
             margin="normal"
             required
@@ -164,6 +166,9 @@ const SignUp = ({ history }) => {
             variant="contained"
             color="primary"
             className={classes.submit}
+            // onClick={()=>{
+            //   return <CharacterSelect />;
+            // }}
           >
             Sign Up
           </Button>
