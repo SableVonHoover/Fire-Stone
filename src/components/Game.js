@@ -11,6 +11,8 @@ import MediaCard2 from "./fighterCard2";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Grow from "@material-ui/core/Grow";
+import FighterCard1 from "./fighterCard";
+import FighterCard2 from "./fighterCard2";
 // import AudioPlayer from "./audio"
 
 const useStyles = makeStyles(theme => ({
@@ -48,7 +50,7 @@ export default function Game() {
             // left: "50%",
             // top: "50%",
             // transform: "translate(-50%, -50%)",
-            marginBottom: "3px"            
+            marginBottom: "3px"
           }}
         >
           <h1 id="FireWordsButton" class="font-effect-fire-animation">
@@ -75,11 +77,34 @@ export default function Game() {
             hidden={hidden}
           >
             <Grid container spacing={3} align="center" justify="center">
-              <Grid item xs={6}>
-                <MediaCard></MediaCard>
+              <Grid
+                item
+                xs={6}
+                style={{
+                  height: "30vh",
+                  width: "30vw",
+                  position: "absolute",
+                  top: "50%",
+                  bottom: "50%",
+                  transform: "translate(-50%, -50%)"
+                }}
+              >
+                <FighterCard1 />
               </Grid>
-              <Grid item xs={6}>
-                <MediaCard2></MediaCard2>
+              <Grid
+                item
+                xs={6}
+                style={{
+                  height: "30vh",
+                  width: "30vw",
+                  position: "absolute",
+                  top: "50%",
+                  bottom: "50%",
+                  left: "80%",
+                  transform: "translate(-50%, -50%)"
+                }}
+              >
+                <FighterCard2 />
                 {/* <AudioPlayer></AudioPlayer> */}
               </Grid>
             </Grid>

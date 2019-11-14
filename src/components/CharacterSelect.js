@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -13,10 +13,13 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { withRouter } from "react-router";
+import { AuthContext } from "../js/auth.js";
 import app from "../js/firebaseConfig";
 import API from "../utils/API";
+import ButtonActions from "./ComponentLink";
 import SelectChoice from "./Selection";
 import characters from "./Characters.json";
+import Game from "./Game";
 // import Card from "@material-ui/core/Card";
 
 characters.forEach(character => {
@@ -24,6 +27,10 @@ characters.forEach(character => {
 });
 
 const CharacterSelect = ({ history }) => {
+  const { currentUser } = useContext(AuthContext);
+
+  // const playGame = new ButtonActions("Game");
+
   const handleCharacter = useCallback(
     async event => {
       event.preventDefault();
@@ -32,8 +39,8 @@ const CharacterSelect = ({ history }) => {
         await app;
 
         //TODO: Populate with user's character choice and associate it with user id from collection
-        let currentFBUserEmail = app.firebase.auth().currentUser.email;
-        console.log(currentFBUserEmail);
+        // let currentFBUserEmail = app.firebase.auth().currentUser.email;
+        // console.log(currentFBUserEmail);
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route
@@ -44,6 +51,10 @@ const CharacterSelect = ({ history }) => {
     },
     [history]
   );
+
+  if (currentUser) {
+    return <Game />;
+  }
 
   const characterOptions = () => {
     return characters.map(character => (

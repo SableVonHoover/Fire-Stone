@@ -59,7 +59,7 @@ export default class ButtonActions extends Component {
       currentComponent: "Landing"
     };
   }
-  
+
   handleComponentChange = component => {
     this.setState({ currentComponent: component });
   };
@@ -107,7 +107,10 @@ export default class ButtonActions extends Component {
     } else if (this.state.currentComponent === "SignUp") {
       return (
         <Grow in={!false}>
-          <SignUp currentComponent={this.state.currentComponent} handleComponentChange={this.handleComponentChange}/>
+          <SignUp
+            currentComponent={this.state.currentComponent}
+            handleComponentChange={this.handleComponentChange}
+          />
         </Grow>
       );
     } else if (this.state.currentComponent === "Landing") {

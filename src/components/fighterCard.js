@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
 import Knight from "../images/knight.gif";
 import Wizard from "../images/wizard.gif";
-
+import FighterCard2 from "./fighterCard2";
 
 const useStyles = makeStyles({
   card: {
@@ -22,24 +22,35 @@ const useStyles = makeStyles({
   }
 });
 
-export default function MediaCard() {
-  const classes = useStyles();
+export default class FighterCard1 extends FighterCard2 {
+  render() {
+    let dmg = this.state.enDamage;
+    let myNewHp = this.state.myTotalHealth - dmg;
+    let myBarWidth = (myNewHp / this.state.myTotalHealth) * 100;
+    let myDmgWidth = dmg / this.state.myCurrentHealth;
 
-  return (
-    <Card className={classes.card} class="FC1">
-      <CardActionArea>
+    return (
+      <Card className="card" class="FC1">
+        <div className="health-bar">
+          <div class="bar" style={{ width: myBarWidth + "%" }}>
+            {this.state.myCurrentHealth}
+            <div class="hit" style={{ width: myDmgWidth + "%" }}></div>
+          </div>
+        </div>
+        {/* <CardActionArea> */}
         <CardMedia
-          className={classes.media}
+          // className={classes.media}
           image="/static/images/cards/contemplative-reptile.jpg"
           title="Contemplative Reptile"
         />
+
         <CardContent>
           <img
             src={Knight}
             style={{
               textAlign: "center",
-              height: 250,
-              width: 250,
+              height: "15.625rem",
+              width: "15.625rem",
               transform: "rotatey(180deg)"
             }}
             alt=""
@@ -53,29 +64,34 @@ export default function MediaCard() {
 
         }}/> */}
         </CardContent>
-      </CardActionArea>
-      <CardActions style={{ textAlign: "center" }}>
-        {/* <Button size="small" color="primary">
+
+        <CardActions style={{ textAlign: "center" }}>
+          {/* <Button size="small" color="primary">
           Attack 1
         </Button>
         <Button size="small" color="primary">
           Attack 2
         </Button> */}
-      </CardActions>
+          <Button
+            id="lava-lance"
+            onClick={this.addDamage.bind(this, 107)}
+          >
+            Lava Lance
+          </Button>
+          <Button id="shield-bash" onClick={this.addDamage.bind(this, 78)}>
+            Shield Bash
+          </Button>
+          <Button id="execute" onClick={this.addDamage.bind(this, 999)}>
+            Execute
+          </Button>
+          <Button id="restart-button" onClick={this.addDamage.bind(this, 0)}>
+            Restart game
+          </Button>
+        </CardActions>
+        {/* </CardActionArea> */}
 
-      <h3>
-        Your Health <span id="player-health"></span>
-      </h3>
-      <Button id="attack-button-1" onclick="attack()">
-        hit em
-      </Button>
-      <Button id="attack-button-2" onclick="attack()">
-        hit em
-      </Button>
-      <Button id="restart-button" hidden="true" onClick="restart()">
-        Restart game
-      </Button>
-      <h3 id="game-message"></h3>
-    </Card>
-  );
+        <h3 id="game-message"></h3>
+      </Card>
+    );
+  }
 }
