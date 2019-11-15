@@ -82,6 +82,14 @@
  letter-spacing: 4px;
  font-family: 'Press Start 2P', cursive;
  }
+
+ #FireWordsLanding{
+     font-size: 40px;
+     letter-spacing: 4px;
+     font-family: 'Press Start 2P', cursive;
+
+
+ }
  #logo {
   z-index: 1;
   opacity: 0;
@@ -194,4 +202,9 @@
   letter-spacing: 0.25rem;
   line-height: 1.875rem ;
   font-family: 'Press Start 2P', cursive;
+  }
+
+  .SignUp {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
   }

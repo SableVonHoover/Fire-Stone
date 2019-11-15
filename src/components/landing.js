@@ -8,7 +8,9 @@ function Landing() {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <p>Welcome to FireStone!!!</p>
+      <h1 id="FireWordsLanding" class="font-effect-fire-animation">
+              Welcome To Firestone!
+            </h1>
       <a
         className="App-link"
         href="https://github.com/SableVonHoover/Fire-Stone"
