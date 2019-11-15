@@ -6,8 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
 import Arena from "../images/arena.jpg";
 import Container from "@material-ui/core/Container";
-import MediaCard from "./fighterCard";
-import MediaCard2 from "./fighterCard2";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Grow from "@material-ui/core/Grow";
@@ -53,7 +51,7 @@ export default function Game() {
             marginBottom: "3px"
           }}
         >
-          <h1 id="FireWordsButton" class="font-effect-fire-animation">
+          <h1 id="FireWordsButton" className="font-effect-fire-animation">
             Let's Play FireStone
           </h1>
         </Button>
@@ -63,8 +61,8 @@ export default function Game() {
         >
           <Paper
             style={{
-              height: "60vh",
-              width: "60vw",
+              height: "100vh",
+              width: "100vw",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -81,22 +79,22 @@ export default function Game() {
                 item
                 xs={6}
                 style={{
-                  height: "30vh",
-                  width: "30vw",
+                  height: "60vh",
+                  width: "60vw",
                   position: "absolute",
                   top: "50%",
                   bottom: "50%",
                   transform: "translate(-50%, -50%)"
                 }}
               >
-                <FighterCard1 />
+                <FighterCard2 />
               </Grid>
               <Grid
                 item
                 xs={6}
                 style={{
-                  height: "30vh",
-                  width: "30vw",
+                  height: "60vh",
+                  width: "60vw",
                   position: "absolute",
                   top: "50%",
                   bottom: "50%",
@@ -104,13 +102,13 @@ export default function Game() {
                   transform: "translate(-50%, -50%)"
                 }}
               >
-                <FighterCard2 />
+                <FighterCard1 />
                 {/* <AudioPlayer></AudioPlayer> */}
               </Grid>
             </Grid>
           </Paper>
         </Grow>
-        <div id="animated-example" class="animated slideInLeft"></div>
+        <div id="animated-example" className="animated slideInLeft"></div>
       </div>
     </Container>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -8,11 +8,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
-import Dragon from "../images/dragon.gif";
-import Zombie from "../images/zombie.gif";
-import Forest from "../images/forest.gif";
+import Knight from "../images/knight.gif";
+import Wizard from "../images/wizard.gif";
 import FighterCard1 from "./fighterCard";
-// import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   card: {
@@ -24,89 +22,70 @@ const useStyles = makeStyles({
   }
 });
 
-export default class FighterCard2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      myTotalHealth: 999,
-      myCurrentHealth: 999,
-      enTotalHealth: 999,
-      enCurrentHealth: 999,
-      myDamage: 0,
-      enDamage: 0
-    };
-    // this.setDamage = this.setDamage.bind(this);
-    // this.restartGame = this.restartGame.bind(this);
-  }
-
-  addDamage(amount) {
-    this.setState({ damage: amount });
-  }
-
-  restartGame() {
-    this.setState({
-      myTotalHealth: 999,
-      myCurrentHealth: 999,
-      enTotalHealth: 999,
-      enCurrentHealth: 999,
-      myDamage: 0,
-      enDamage: 0
-    });
-  }
-
+export default class FighterCard2 extends FighterCard1 {
   render() {
-    let dmg = this.state.myDamage;
-    let enNewHp = this.state.enTotalHealth - dmg;
-    let enBarWidth = (enNewHp / this.state.enTotalHealth) * 100;
-    let enDmgWidth = dmg / this.state.enCurrentHealth;
+    let enDmg = this.state.enDamage;
+    let myNewHp = this.state.myTotalHealth - enDmg;
+    let myBarWidth = (myNewHp / this.state.myTotalHealth) * 100;
+    let myDmgWidth = (enDmg / this.state.myCurrentHealth) * 100;
 
     return (
-      <Card className="card" class="FC2">
-        <div className="health-bar" id="opponent-health">
-          <div
-            class="bar"
-            id="opponent-bar"
-            style={{ width: enBarWidth + "%" }}
-          >
-            {this.state.enCurrentHealth}
-            <div
-              class="hit"
-              id="opponent-hit"
-              style={{ width: enDmgWidth + "%" }}
-            ></div>
+      <Card className="card" class="FC1">
+        <div className="health-bar">
+          <div class="bar" style={{ width: myBarWidth + "%" }}>
+            {this.state.myCurrentHealth}
+            <div class="hit" style={{ width: myDmgWidth + "%" }}></div>
           </div>
         </div>
         {/* <CardActionArea> */}
         <CardMedia
-        // className={classes.media}
-        // image="/static/images/cards/contemplative-reptile.jpg"
-        // title="Contemplative Reptile"
+          // className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
         />
+
         <CardContent>
-          {/* <img src={Dragon } className="dragon"
-        style={{
-          height: 200, 
-          width: 190, 
-          transform: "rotatey(180deg)"
-          }} /> */}
           <img
-            src={Zombie}
-            className="zombie"
+            src={Knight}
             style={{
-              height: "14.6875rem",
-              width: "15.625rem"
+              textAlign: "center",
+              height: "15.625rem",
+              width: "15.625rem",
+              transform: "rotatey(180deg)"
             }}
             alt=""
           />
-          {/* <img src={Forest } className="forest"
+
+          {/* <img src={Wizard}
         style={{
-          height: 200, 
-          width: 150, 
-          
-          }} /> */}
+        textAlign: "center",
+        height: 250,
+        width: 250,
+
+        }}/> */}
         </CardContent>
+
+        <CardActions style={{ textAlign: "center" }}>
+          {/* <Button size="small" color="primary">
+          Attack 1
+        </Button>
+        <Button size="small" color="primary">
+          Attack 2
+        </Button> */}
+          <Button id="lava-lance" onClick={this.addDamage.bind(this, 107)}>
+            Lava Lance
+          </Button>
+          <Button id="shield-bash" onClick={this.addDamage.bind(this, 78)}>
+            Shield Bash
+          </Button>
+          <Button id="execute" onClick={this.addDamage.bind(this, 999)}>
+            Execute
+          </Button>
+          <Button id="restart-button" onClick={this.addDamage.bind(this, 0)}>
+            Restart game
+          </Button>
+        </CardActions>
         {/* </CardActionArea> */}
-        <CardActions style={{ textAlign: "center" }}></CardActions>
 
         <h3 id="game-message"></h3>
       </Card>
