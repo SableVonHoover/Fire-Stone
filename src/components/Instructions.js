@@ -9,6 +9,7 @@ import Box from "@material-ui/core/Box";
 import Copyright from "./Copyright";
 import Grid from "@material-ui/core/Grid";
 import zIndex from "@material-ui/core/styles/zIndex";
+import WhatshotIcon from '@material-ui/icons/Whatshot';
 // import Background from "../images/FireBG.gif";
 
 const useStyles = makeStyles(theme => ({
@@ -34,8 +35,8 @@ export default function Instructions() {
         <CssBaseline />
         <Paper
           style={{
-            height: "60vh",
-            width: "60vw",
+            height: "90vh",
+            width: "80vw",
             backgroundColor: "black",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -53,14 +54,14 @@ export default function Instructions() {
           </div>
           <div id="titles" style={{ overflow: "hidden"}}>
             <div id="titlecontent">
-              ​<p>It has fallen to you...</p>
-              <br></br>
-              <p>The fate of all kind is in your hands.</p>
-              <br></br>
-              <p>Choose your champion. </p>​<p>Battle your opponent </p>
-              <p>But choose wisely between your 2 attacks!</p>
-              <p>Gain experience, gain strength</p>
-              <p>Save the day!</p>
+              ​<WhatshotIcon></WhatshotIcon><p>It has fallen to you...</p>
+              <WhatshotIcon></WhatshotIcon><p>The fate of all kind is in your hands.</p>
+              <WhatshotIcon></WhatshotIcon><p>Choose your champion. </p> 
+               ​<WhatshotIcon></WhatshotIcon><p>Battle your opponent. </p>
+               <WhatshotIcon></WhatshotIcon><p>But choose wisely between your 2 attacks!</p>
+               <WhatshotIcon></WhatshotIcon><p>Gain experience, gain strength.</p>
+               <WhatshotIcon></WhatshotIcon><p>Save the day!</p>
+              
               Good luck, Brave One. ​
             </div>
           </div>
