@@ -18,10 +18,14 @@ import API from "../utils/API";
 import SelectChoice from "./Selection";
 import characters from "./Characters.js";
 // import Card from "@material-ui/core/Card";
+import Game from "./Game";
+import * as firebase from "firebase/app";
 
 characters.forEach(character => {
   character.image = require("../images/" + character.image);
 });
+
+let redirectCounter = false;
 
 const CharacterSelect = ({ history }) => {
   const handleCharacter = useCallback(
@@ -32,11 +36,12 @@ const CharacterSelect = ({ history }) => {
         await app;
 
         //TODO: Populate with user's character choice and associate it with user id from collection
-        let currentFBUserEmail = app.firebase.auth().currentUser.email;
+        let currentFBUserEmail = firebase.auth().currentUser.email;
         console.log(currentFBUserEmail);
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route
+        redirectCounter = true;
         history.push("/");
       } catch (error) {
         alert(error);
@@ -44,6 +49,11 @@ const CharacterSelect = ({ history }) => {
     },
     [history]
   );
+
+  if (redirectCounter) {
+    redirectCounter = false;
+    return <Game />;
+  }
 
   const characterOptions = () => {
     return characters.map(character => (

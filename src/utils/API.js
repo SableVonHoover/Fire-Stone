@@ -19,6 +19,9 @@ export default {
     makeUser: function (userData) {
         return axios.post("/api/user", userData);
     },
+    updateUser: function (userData) {
+        return axios.put("/api/user", userData);
+    },
 
     // Characters apis
     getCharacters: function () {
