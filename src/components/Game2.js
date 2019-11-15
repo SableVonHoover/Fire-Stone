@@ -8,6 +8,7 @@ import Arena from "../images/arena.jpg";
 import Container from "@material-ui/core/Container";
 import MediaCard from "./fighterCard";
 import MediaCard2 from "./fighterCard2";
+import MediaCard3 from "./fighterCard3"
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Grow from "@material-ui/core/Grow";
@@ -61,18 +62,16 @@ export default function Game() {
         >
           <Paper
             style={{
-              height: "80vh",
-              width: "80vw",
+              height: "60vh",
+              width: "60vw",
               position: "absolute",
               left: "50%",
               top: "50%",
               transform: "translate(-50%, -50%)",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundImage:"url(" + Arena + ")",
-              
-              backgroundRepeat: "no-repeat",
-              
+              backgroundImage: "url(" + Arena + ")",
+              backgroundRepeat: "no-repeat"
             }}
             hidden={hidden}
           >
@@ -81,7 +80,7 @@ export default function Game() {
                 <MediaCard></MediaCard>
               </Grid>
               <Grid item xs={6}>
-                <MediaCard2></MediaCard2>
+                <MediaCard3></MediaCard3>
                 {/* <AudioPlayer></AudioPlayer> */}
               </Grid>
             </Grid>
