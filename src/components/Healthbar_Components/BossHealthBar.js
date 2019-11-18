@@ -30,7 +30,7 @@ export default function BossHealthBar(props) {
       className={classes.margin}
       variant="determinate"
       color="secondary"
-      value={props.bossTotalHealth}
+      value={props.bossCurrentHealth}
     />
   );
 }
