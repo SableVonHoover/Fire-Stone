@@ -14,7 +14,6 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import AddIcon from "@material-ui/icons/Add";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import app from "../js/firebaseConfig";
-import { red } from "ansi-colors";
 
 // import ViewContainer from "./ViewContainer";
 
@@ -26,8 +25,8 @@ const useStyles = makeStyles(theme => ({
   },
   speedDial: {
     position: "absolute",
-    bottom: theme.spacing(0),
-    right: theme.spacing(0)
+    bottom: theme.spacing(1),
+    right: theme.spacing(1)
   }
 }));
 
@@ -61,6 +60,7 @@ export default function PopAction(props) {
     <div>
       <Button onClick={handleVisibility}>Toggle Menu</Button>
       <Backdrop open={open} />
+
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         className={classes.speedDial}
@@ -70,7 +70,6 @@ export default function PopAction(props) {
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
-        style={{backgroundColor: red}}
       >
         {actions.map(action => (
           <SpeedDialAction

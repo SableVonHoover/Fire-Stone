@@ -8,7 +8,7 @@ function Landing() {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 id="FireWordsLanding" class="font-effect-fire-animation">
+      <h1 id="FireWordsLanding" className="font-effect-fire-animation">
               Welcome To Firestone!
             </h1>
       <a

@@ -139,7 +139,7 @@ export default class ButtonActions extends Component {
                   elevation={10}
                 />
                 <ImageBackground
-                  blurRadius={10}
+                  blurRadius={50}
                   source={{
                     uri:
                       "https://images.pexels.com/photos/539986/pexels-photo-539986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"

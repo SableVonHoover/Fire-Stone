@@ -10,9 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
 import Knight from "../images/knight.gif";
 import Wizard from "../images/wizard.gif";
-import FavoriteIcon from '@material-ui/icons/Favorite';
-
-
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const useStyles = makeStyles({
   card: {
@@ -24,7 +22,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -36,26 +34,22 @@ export default function MediaCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
-        <h3 class="GoodHealth">Health <FavoriteIcon></FavoriteIcon> <span id="player-health">---</span></h3>
-      <Button id="attack-button-1" onclick="attack()">
-        hit em
-      </Button>
-      <Button id="attack-button-2" onclick="attack()">
-        hit em
-      </Button>
-      {/* <Button id="restart-button" hidden="true" onClick="restart()">
+          <h3 class="GoodHealth">
+            Health <FavoriteIcon></FavoriteIcon>{" "}
+            <span id="player-health">---</span>
+          </h3>
+
+          {/* <Button id="restart-button" hidden="true" onClick="restart()">
         Restart game
       </Button> */}
-      <h3 id="game-message"></h3>
+          <h3 id="game-message"></h3>
           <img
             src={Knight}
             style={{
               textAlign: "center",
-              height: 260,
-              width: 220,
+              height: "16.25rem",
+              width: "13.75rem",
               marginBottom: 20
-              
-              
             }}
             alt=""
           />
@@ -67,10 +61,6 @@ export default function MediaCard() {
         width: 250,
 
         }}/> */}
-
-
-         
-      
         </CardContent>
       </CardActionArea>
       <CardActions style={{ textAlign: "center" }}>
@@ -79,10 +69,19 @@ export default function MediaCard() {
         </Button>
         <Button size="small" color="primary">
           Attack 2
-        </Button> */}
+        </Button> */}{" "}
+        <Button
+          id="attack-button-1"
+          onclick={() => {
+            props.handleBossHealthChange.bind(this, 80);
+          }}
+        >
+          hit em
+        </Button>
+        <Button id="attack-button-2" onclick="attack()">
+          hit em
+        </Button>
       </CardActions>
-
-     
     </Card>
   );
 }

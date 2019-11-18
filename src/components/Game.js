@@ -11,6 +11,7 @@ import MediaCard2 from "./fighterCard2";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Grow from "@material-ui/core/Grow";
+import FighterHealth from "./Healthbar_Components/fighterHealth";
 // import AudioPlayer from "./audio"
 
 const useStyles = makeStyles(theme => ({
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Game() {
+export default function Game(props) {
   const [hidden, setHidden] = React.useState(true);
 
   const handleVisibility = () => {
@@ -48,7 +49,7 @@ export default function Game() {
             // left: "50%",
             // top: "50%",
             // transform: "translate(-50%, -50%)",
-            marginBottom: "3px"            
+            marginBottom: "3px"
           }}
         >
           <h1 id="FireWordsButton" class="font-effect-fire-animation">
@@ -69,14 +70,15 @@ export default function Game() {
               transform: "translate(-50%, -50%)",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundImage:"url(" + Arena + ")",
-              
-              backgroundRepeat: "no-repeat",
-              
+              backgroundImage: "url(" + Arena + ")",
+              backgroundRepeat: "no-repeat"
             }}
             hidden={hidden}
           >
             <Grid container spacing={3} align="center" justify="center">
+              <Grid item xs={12}>
+                <FighterHealth></FighterHealth>
+              </Grid>
               <Grid item xs={6}>
                 <MediaCard></MediaCard>
               </Grid>
