@@ -35,8 +35,8 @@ export default class FighterHealth extends Component {
     };
   }
 
-  handleBossHealthChange = e => {
-    this.setState({ bossCurrentHealth: e.target.value });
+  handleBossHealthChange = newValue => {
+    this.setState({ bossCurrentHealth: newValue });
   };
 
   render() {
@@ -46,13 +46,13 @@ export default class FighterHealth extends Component {
         <Grid item xs={6}>
           <PlayerHealthBar
             value={this.state.playerCurrentHealth}
-            handleChange={this.handleBossHealthChange}
+            // handleChange={this.handleBossHealthChange}
           />
         </Grid>
         <Grid item xs={6}>
           <BossHealthBar
             value={this.state.bossCurrentHealth}
-            // handleChange={this.handleChange}
+            handleChange={this.handleBossHealthChange}
           />
         </Grid>
       </Grid>
