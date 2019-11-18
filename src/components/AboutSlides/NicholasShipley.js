@@ -20,7 +20,7 @@ export default function NicholasShipley() {
     <StyledSlide
       media={
         <img
-          src="https://ca.slack-edge.com/TJP3TP97Y-UJY49QQHM-deea91cab3ec-512"
+          src="https://ca.slack-edge.com/TJP3TP97Y-UJY49QQHM-64f340515c7c-512"
           alt=""
         />
       }
