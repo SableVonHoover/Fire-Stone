@@ -84,11 +84,8 @@
  }
 
  #FireWordsLanding{
-     font-size: 40px;
-     letter-spacing: 4px;
+     letter-spacing: 0.25rem;
      font-family: 'Press Start 2P', cursive;
-
-
  }
  #logo {
   z-index: 1;
