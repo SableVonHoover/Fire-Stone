@@ -70,17 +70,6 @@ export default function MediaCard(props) {
         <Button size="small" color="primary">
           Attack 2
         </Button> */}{" "}
-        <Button
-          id="attack-button-1"
-          onClick={() => {
-            props.handleBossHealthChange(80);
-          }}
-        >
-          hit em
-        </Button>
-        <Button id="attack-button-2" onclick="attack()">
-          hit em
-        </Button>
       </CardActions>
     </Card>
   );

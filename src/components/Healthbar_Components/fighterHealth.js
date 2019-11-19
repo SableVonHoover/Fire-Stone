@@ -2,7 +2,30 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import PlayerHealthBar from "./PlayerHealthBar";
 import BossHealthBar from "./BossHealthBar";
+import Button from "@material-ui/core/Button";
+import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import { StyleSheet } from "react-native";
+import LinearProgress from "@material-ui/core/LinearProgress";
+
+const BorderLinearProgress = withStyles({
+  root: {
+    height: 10,
+    backgroundColor: lighten("#ff6c5c", 0.5)
+  },
+  bar: {
+    borderRadius: 20,
+    backgroundColor: "#ff6c5c"
+  }
+})(LinearProgress);
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  margin: {
+    margin: theme.spacing(1)
+  }
+}));
 
 const styles = StyleSheet.create({
   Container: {
@@ -19,40 +42,59 @@ const styles = StyleSheet.create({
 });
 
 export default class FighterHealth extends Component {
-  constructor(props) {
-    super(props);
-    this.handleBossHealthChange = this.handleBossHealthChange.bind(this);
+  state = {
+    playerHealthTotal: 100,
+    playerCurrentHealth: 100,
+    playerDamageOutput: 0,
+    playerDamageTaken: 0,
+    bossHealthTotal: 100,
+    bossCurrentHealth: 100,
+    bossDamageOutput: 0,
+    bossDamageTaken: 0
+  };
 
-    this.state = {
-      playerHealthTotal: 100,
-      playerCurrentHealth: 100,
-      playerDamageOutput: 0,
-      playerDamageTaken: 0,
-      bossHealthTotal: 100,
-      bossCurrentHealth: 100,
-      bossDamageOutput: 0,
-      bossDamageTaken: 0
-    };
-  }
-
-  handleBossHealthChange = newValue => {
-    this.setState({ bossCurrentHealth: newValue });
+  handleBossHealthChange = (key, value) => {
+    this.setState({ [key]: this.state[key] - value });
   };
 
   render() {
+    const classes = useStyles;
+
     return (
       // <div style={styles.Container}>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <PlayerHealthBar
+          <BorderLinearProgress
+            className={classes.margin}
+            variant="determinate"
+            color="secondary"
             value={this.state.playerCurrentHealth}
-            // handleChange={this.handleBossHealthChange}
           />
+          <Button
+            id="attack-button-1"
+            onClick={() => {
+              this.handleBossHealthChange.bind(this, "bossCurrentHealth", 80);
+              console.log(this.state.bossCurrentHealth);
+            }}
+          >
+            hit em
+          </Button>
+          <Button
+            id="attack-button-2"
+            onClick={() => {
+              this.handleBossHealthChange.bind(this, "bossCurrentHealth", 20);
+              console.log(this.state.bossCurrentHealth);
+            }}
+          >
+            hit em
+          </Button>
         </Grid>
         <Grid item xs={6}>
-          <BossHealthBar
+          <BorderLinearProgress
+            className={classes.margin}
+            variant="determinate"
+            color="secondary"
             value={this.state.bossCurrentHealth}
-            handleChange={this.handleBossHealthChange}
           />
         </Grid>
       </Grid>

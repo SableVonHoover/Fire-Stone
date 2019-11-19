@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
@@ -22,15 +22,17 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function BossHealthBar(props) {
-  const classes = useStyles();
+export default class BossHealthBar extends Component {
+  render() {
+    const classes = useStyles;
 
-  return (
-    <BorderLinearProgress
-      className={classes.margin}
-      variant="determinate"
-      color="secondary"
-      value={props.bossCurrentHealth}
-    />
-  );
+    return (
+      <BorderLinearProgress
+        className={classes.margin}
+        variant="determinate"
+        color="secondary"
+        value={this.state.bossCurrentHealth}
+      />
+    );
+  }
 }
