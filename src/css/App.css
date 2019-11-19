@@ -1,207 +1,232 @@
 .App {
-  text-align: center;
- }
- .App-logo {
-  height: 40vmin;
- }
- 
-
- .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  width: 100vw;
-  background: no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+    text-align: center;
 }
- .App-link {
-  color: #09d3ac;
- }
- .FC1 {
-  width: 20vw;
-  height: 10vh;
-  font-family: 'Press Start 2P', cursive;
- }
- .FC2 {
-  width: 20vw;
-  height: 20vh;
-  font-family: 'Press Start 2P', cursive;
- /* background-color: blue; */
- }
- #attack-button-1 {
-  color: red;
-  background-color: white;
-  margin: 3px;
- }
- #attack-button-2 {
-  color: red;
-  background-color: wheat;
-  margin: 3px;
- }
- #restart-button {
-  color: black;
-  background-color: red;
-  margin: 3px;
- }
 
- .GoodHealth {
-     color: wheat;
-     font-size: 18px;
-     
-     font-family: 'Press Start 2P', cursive;
- }
+.App-logo {
+    height: 40vmin;
+}
 
- .BadHealth {
-    color: wheat;
-    font-size: 20px;
+.App-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    width: 100vw;
+    background: no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.App-link {
+    color: #09d3ac;
+}
+
+.FC1 {
+    width: 20vw;
+    height: 10vh;
     font-family: 'Press Start 2P', cursive;
 }
- #intro {
-  opacity: 0;
-  position: absolute;
-  width: 60%;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  margin-left: 150px;
-  color: white;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 200%;
-  animation: intro 100s ease-out infinite;
-  z-index: 1;
- }
- #FireWords {
- letter-spacing: 4px;
- font-family: 'Press Start 2P', cursive;
- }
 
- #FireWordsLanding{
-     letter-spacing: 0.25rem;
-     font-family: 'Press Start 2P', cursive;
- }
- #logo {
-  z-index: 1;
-  opacity: 0;
-  position: absolute;
-  width: 80%;
-  left: 50%;
-  height: 60%;
-  top: 70%;
- transform: translateX(-50%) translateY(-50%);
- animation: logo 100s ease-out;
- /* background-image: url(../images/FireLogo.jpg); */
- background-repeat: no-repeat;
- background-size: contain;
- background-position: center center;
- border-radius: 80%;
- }
- #titles
- {
-     position: absolute;
-     width: 18em;
-     height: 50em;
-     bottom: 0;
-     left: 50%;
-     margin-left: -9em;
-     font-size: 250%;
-     font-weight: bold;
-     text-align: justify;
-     overflow: hidden;
-     transform-origin: 50% 100%;
-     transform: perspective(18.75rem) rotateX(25deg);
- }
- #titles:after
- {
-     position: absolute;
-     content: ' ';
-     left: 0;
-     right: 0;
-     top: 0;
-     bottom: 60%;
-     background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-  pointer-events: none;
-  font-family: 'Press Start 2P', cursive;
- }
- #titlecontent
- {
-  margin-left: 1.25rem;
-     position: absolute;
-     top: 100%;
+.FC2 {
+    width: 20vw;
+    height: 20vh;
+    font-family: 'Press Start 2P', cursive;
+    /* background-color: blue; */
+}
+
+#attack-button-1 {
+    color: red;
+    background-color: white;
+    margin: 0.1875rem;
+}
+
+#attack-button-2 {
+    color: red;
+    background-color: wheat;
+    margin: 0.1875rem;
+}
+
+#restart-button {
+    color: black;
+    background-color: red;
+    margin: 0.1875rem;
+}
+
+.GoodHealth {
+    color: wheat;
+    font-size: 1.125rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.BadHealth {
+    color: wheat;
+    font-size: 1.125rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.GameMessage {
+    color: red;
+    font-size: 1.125rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#intro {
+    opacity: 0;
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    margin-left: 150px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 200%;
+    animation: intro 100s ease-out infinite;
+    z-index: 1;
+}
+
+#FireWords {
+    letter-spacing: 4px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#FireWordsLanding {
+    letter-spacing: 0.25rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#logo {
+    z-index: 1;
+    opacity: 0;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    height: 60%;
+    top: 70%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: logo 100s ease-out;
+    /* background-image: url(../images/FireLogo.jpg); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    border-radius: 80%;
+}
+
+#titles {
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 250%;
+    font-weight: bold;
+    text-align: justify;
     overflow: hidden;
-  animation: scroll 150s linear 4s;
-  animation-delay: 15s;
-  color: white;
-  font-family: 'Press Start 2P', cursive;
- }
- @keyframes scroll {
-     0% { top: 100%; }
-     100% { top: -170%; }
- }
- @keyframes intro {
-  0% {
-      opacity: 0;
-  }
- 1% {
-  opacity: 0;
- }
-  1.5% {
-  opacity: 1;
- }
-  5.5% {
-  opacity: 1;
- }
-  6% {
-  opacity: 0;
- }
- }
- @keyframes logo {
-  9% {
-  transform: translateX(-50%) translateY(-50%) scale(2);
-  opacity: 0;
- }
- 9.1% {
-  opacity: 1;
- }
-  14% {
-  opacity: 1;
- }
-  18% {
-  transform: translateX(-50%) translateY(-50%) scale(0.1);
-  opacity: 0;
- }
- }
- @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
- @import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation);
- html {
-  background: #ddd;
- }
- h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 3.75rem;
- }
- .FightButton {
-  background-color: black;
-  height: 5rem;
-  width: 25rem;
-  font-size: 1.25rem;
- }
- #FireWordsButton {
-  margin-bottom: auto;
-  font-size: 1.25rem;
-  letter-spacing: 0.25rem;
-  line-height: 1.875rem ;
-  font-family: 'Press Start 2P', cursive;
-  }
+    transform-origin: 50% 100%;
+    transform: perspective(18.75rem) rotateX(25deg);
+}
 
-  .SignUp {
+#titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    pointer-events: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#titlecontent {
+    margin-left: 1.25rem;
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    animation: scroll 150s linear 4s;
+    animation-delay: 15s;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -170%;
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        opacity: 0;
+    }
+    1.5% {
+        opacity: 1;
+    }
+    5.5% {
+        opacity: 1;
+    }
+    6% {
+        opacity: 0;
+    }
+}
+
+@keyframes logo {
+    9% {
+        transform: translateX(-50%) translateY(-50%) scale(2);
+        opacity: 0;
+    }
+    9.1% {
+        opacity: 1;
+    }
+    14% {
+        opacity: 1;
+    }
+    18% {
+        transform: translateX(-50%) translateY(-50%) scale(0.1);
+        opacity: 0;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&effect=fire-animation');
+html {
+    background: #ddd;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3.75rem;
+}
+
+.FightButton {
+    background-color: black;
+    height: 5rem;
+    width: 25rem;
+    font-size: 1.25rem;
+}
+
+#FireWordsButton {
+    margin-bottom: auto;
+    font-size: 1.25rem;
+    letter-spacing: 0.25rem;
+    line-height: 1.875rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.SignUp {
     font-family: 'Press Start 2P', cursive;
     font-size: 25px;
-  }
+}
