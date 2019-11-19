@@ -10,7 +10,6 @@ import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
 import Knight from "../images/knight.gif";
 import Wizard from "../images/wizard.gif";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const useStyles = makeStyles({
   card: {
@@ -34,11 +33,6 @@ export default function MediaCard(props) {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <h3 class="GoodHealth">
-            Health <FavoriteIcon></FavoriteIcon>{" "}
-            <span id="player-health">---</span>
-          </h3>
-
           {/* <Button id="restart-button" hidden="true" onClick="restart()">
         Restart game
       </Button> */}
@@ -63,14 +57,6 @@ export default function MediaCard(props) {
         }}/> */}
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ textAlign: "center" }}>
-        {/* <Button size="small" color="primary">
-          Attack 1
-        </Button>
-        <Button size="small" color="primary">
-          Attack 2
-        </Button> */}{" "}
-      </CardActions>
     </Card>
   );
 }

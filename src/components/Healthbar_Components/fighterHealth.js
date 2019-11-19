@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
-import PlayerHealthBar from "./PlayerHealthBar";
-import BossHealthBar from "./BossHealthBar";
 import Button from "@material-ui/core/Button";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import { StyleSheet } from "react-native";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -50,51 +49,169 @@ export default class FighterHealth extends Component {
     bossHealthTotal: 100,
     bossCurrentHealth: 100,
     bossDamageOutput: 0,
-    bossDamageTaken: 0
+    bossDamageTaken: 0,
+    turn: 0
   };
 
-  handleBossHealthChange = (key, value) => {
-    this.setState({ [key]: this.state[key] - value });
+  //function to handle changes to the state
+  handleChange = (key, value) => {
+    this.setState({ [key]: this.state[key] + value });
+  };
+
+  updateHealth = () => {
+    this.setState({
+      playerCurrentHealth:
+        this.state.playerHealthTotal - this.state.bossDamageOutput,
+      bossCurrentHealth:
+        this.state.bossHealthTotal - this.state.playerDamageOutput
+    });
+  };
+
+  //call this function to reset the game
+  restartGame = () => {
+    this.setState({
+      playerHealthTotal: 100,
+      playerCurrentHealth: 100,
+      playerDamageOutput: 0,
+      playerDamageTaken: 0,
+      bossHealthTotal: 100,
+      bossCurrentHealth: 100,
+      bossDamageOutput: 0,
+      bossDamageTaken: 0,
+      turn: 0
+    });
+  };
+
+  //below function for testing purposes only until originally intended functions are working
+  BossDamageRandomizer = () => {
+    const randomDmg = Math.floor(Math.random() * 100 + 1);
+
+    this.setState({
+      bossDamageOutput: this.state.bossDamageOutput + randomDmg
+    });
+  };
+
+  gameMessage = () => {
+    switch (true) {
+      case this.state.playerDamageOutput >= this.state.bossHealthTotal &&
+        this.state.bossDamageOutput >= this.state.playerHealthTotal &&
+        this.state.turn !== 0:
+        return (
+          <Grid item xs={12}>
+            <h3 className="GameMessage">TIE!</h3>
+            <Button
+              id="restart-button"
+              onClick={() => {
+                this.restartGame();
+                console.log(this.state);
+              }}
+            >
+              Restart
+            </Button>
+          </Grid>
+        );
+        break;
+      case this.state.playerDamageOutput >= this.state.bossHealthTotal &&
+        this.state.turn !== 0:
+        return (
+          <Grid item xs={12}>
+            <h3 className="GameMessage">VICTORY!</h3>
+            <Button
+              id="restart-button"
+              onClick={() => {
+                this.restartGame();
+                console.log(this.state);
+              }}
+            >
+              Restart
+            </Button>
+          </Grid>
+        );
+        break;
+      case this.state.bossDamageOutput >= this.state.playerHealthTotal &&
+        this.state.turn !== 0:
+        return (
+          <Grid item xs={12}>
+            <h3 className="GameMessage">GAME OVER!</h3>
+            <Button
+              id="restart-button"
+              onClick={() => {
+                this.restartGame();
+                console.log(this.state);
+              }}
+            >
+              Restart
+            </Button>
+          </Grid>
+        );
+        break;
+      default:
+        return null;
+        break;
+    }
   };
 
   render() {
     const classes = useStyles;
 
+    const playerCurrentHealth =
+      this.state.playerCurrentHealth - this.state.bossDamageOutput;
+
+    const bossCurrentHealth =
+      this.state.bossCurrentHealth - this.state.playerDamageOutput;
+
     return (
       // <div style={styles.Container}>
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={5}>
+          <h3 class="GoodHealth">
+            Health <FavoriteIcon />
+          </h3>
           <BorderLinearProgress
             className={classes.margin}
             variant="determinate"
             color="secondary"
-            value={this.state.playerCurrentHealth}
+            value={playerCurrentHealth}
           />
-          <Button
-            id="attack-button-1"
-            onClick={() => {
-              this.handleBossHealthChange.bind(this, "bossCurrentHealth", 80);
-              console.log(this.state.bossCurrentHealth);
-            }}
-          >
-            hit em
-          </Button>
-          <Button
-            id="attack-button-2"
-            onClick={() => {
-              this.handleBossHealthChange.bind(this, "bossCurrentHealth", 20);
-              console.log(this.state.bossCurrentHealth);
-            }}
-          >
-            hit em
-          </Button>
+          <Grid item xs={5}>
+            <Button
+              id="attack-button-1"
+              onClick={() => {
+                this.handleChange("playerDamageOutput", 80);
+                this.handleChange("turn", 1);
+                this.BossDamageRandomizer();
+                this.updateHealth();
+                console.log(this.state);
+              }}
+            >
+              Over Swing
+            </Button>
+            <Button
+              id="attack-button-2"
+              onClick={() => {
+                this.handleChange("playerDamageOutput", 100);
+                this.handleChange("turn", 1);
+                this.BossDamageRandomizer();
+                this.updateHealth();
+                console.log(this.state);
+              }}
+            >
+              Execution
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={2}>
+          {this.gameMessage()}
+        </Grid>
+        <Grid item xs={5}>
+          <h3 class="BadHealth">
+            Health <FavoriteIcon />
+          </h3>
           <BorderLinearProgress
             className={classes.margin}
             variant="determinate"
             color="secondary"
-            value={this.state.bossCurrentHealth}
+            value={bossCurrentHealth}
           />
         </Grid>
       </Grid>

@@ -11,7 +11,6 @@ import "../css/App.css";
 import Dragon from "../images/dragon.gif";
 import Zombie from "../images/zombie.gif";
 import Forest from "../images/forest.gif";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 // import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
@@ -29,9 +28,6 @@ export default function MediaCard() {
 
   return (
     <Card className={classes.card} class="FC2">
-      <h3 class="BadHealth">
-        Health <FavoriteIcon></FavoriteIcon>
-      </h3>
       <CardActionArea>
         <CardMedia
         // className={classes.media}
@@ -67,7 +63,6 @@ export default function MediaCard() {
           }} /> */}
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ textAlign: "center" }}></CardActions>
     </Card>
   );
 }
