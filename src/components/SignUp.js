@@ -34,11 +34,11 @@ const SignUp = ({ history }) => {
           .createUserWithEmailAndPassword(email.value, password.value);
 
         //Save the user to the mongoose DB
-        // API.makeUser({
-        //   email: email.value,
-        //   username: username.value
-        // })
-        // .catch(err => console.log(err));
+        API.makeUser({
+          email: email.value,
+          username: username.value
+        })
+        .catch(err => console.log(err));
 
         //####################  NOTE  ##########################
         //If account successfully created, redirect to this Route

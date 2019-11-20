@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -15,8 +15,10 @@ import AddIcon from "@material-ui/icons/Add";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import app from "../js/firebaseConfig";
 import { width } from "window-size";
+import { AuthContext } from "../js/auth.js";
 
 // import ViewContainer from "./ViewContainer";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const actions = [
+let actions = [
   { icon: <SportsEsportsIcon />, name: "Quick Play" },
   { icon: <ContactsIcon />, name: "About Us" },
   { icon: <HelpIcon />, name: "Instructions" },
@@ -45,6 +47,7 @@ const actions = [
 ];
 
 export default function PopAction(props) {
+  const { currentUser } = useContext(AuthContext);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
@@ -55,6 +58,23 @@ export default function PopAction(props) {
 
   const handleOpen = () => {
     setOpen(true);
+    if (currentUser) {
+      actions = [
+        { icon: <SportsEsportsIcon />, name: "Quick Play" },
+        { icon: <ContactsIcon />, name: "About Us" },
+        { icon: <HelpIcon />, name: "Instructions" },
+        { icon: <ExitToAppIcon />, name: "Sign Out" }
+      ];
+    }
+    else if (!currentUser) {
+      actions = [
+        { icon: <SportsEsportsIcon />, name: "Quick Play" },
+        { icon: <ContactsIcon />, name: "About Us" },
+        { icon: <HelpIcon />, name: "Instructions" },
+        { icon: <AssignmentIndIcon />, name: "Sign In" },
+        { icon: <AddIcon />, name: "Sign Up" }
+      ];
+    }
   };
 
   const handleClose = () => {
