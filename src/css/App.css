@@ -92,7 +92,7 @@
 }
 
 #FireWords {
-    letter-spacing: 4px;
+    letter-spacing: 0.25rem;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -208,7 +208,8 @@ html {
 
 h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 3.75rem;
+    font-size: 30px;
+    
 }
 
 .FightButton {

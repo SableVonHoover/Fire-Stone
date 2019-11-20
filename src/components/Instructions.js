@@ -48,7 +48,7 @@ export default function Instructions() {
         >
           <div id="intro">Welcome, brave warrior, to...</div>
           <div id="logo">
-            <h1 id="FireWords" class="font-effect-fire-animation">
+            <h1 id="FireWords" className="font-effect-fire-animation">
               FireStone
             </h1>
           </div>

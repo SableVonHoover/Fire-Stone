@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb08da4a.chunk.css",
+    "main.js": "/static/js/main.cf935129.chunk.js",
+    "main.js.map": "/static/js/main.cf935129.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ea6db291.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ea6db291.js.map",
+    "static/js/2.5463f893.chunk.js": "/static/js/2.5463f893.chunk.js",
+    "static/js/2.5463f893.chunk.js.map": "/static/js/2.5463f893.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.935b4ffe222612d801c659c70cdcbab7.js": "/precache-manifest.935b4ffe222612d801c659c70cdcbab7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.eb08da4a.chunk.css.map": "/static/css/main.eb08da4a.chunk.css.map",
+    "static/media/FireLogo.jpg": "/static/media/FireLogo.792263fb.jpg",
+    "static/media/VS.jpg": "/static/media/VS.e75e8a7d.jpg",
+    "static/media/arena.jpg": "/static/media/arena.7e151bb3.jpg",
+    "static/media/arena.gif": "/static/media/arena.ac693688.gif",
+    "static/media/dragon.gif": "/static/media/dragon.d488d7df.gif",
+    "static/media/fire.gif": "/static/media/fire.0e87de1f.gif",
+    "static/media/forest.gif": "/static/media/forest.8c5557f2.gif",
+    "static/media/knight.gif": "/static/media/knight.8d6ff31f.gif",
+    "static/media/suckywork.png": "/static/media/suckywork.4b2d4f95.png",
+    "static/media/textbubble.jpg": "/static/media/textbubble.1825feb6.jpg",
+    "static/media/wizard.gif": "/static/media/wizard.7f2afa00.gif",
+    "static/media/zombie.gif": "/static/media/zombie.fa790756.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea6db291.js",
+    "static/js/2.5463f893.chunk.js",
+    "static/css/main.eb08da4a.chunk.css",
+    "static/js/main.cf935129.chunk.js"
+  ]
+}

@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
 import Arena from "../images/arena.jpg";
 import Container from "@material-ui/core/Container";
-import MediaCard from "./fighterCard";
+import MediaCard from "./fighterCardP1";
 import MediaCard2 from "./fighterCard2";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";

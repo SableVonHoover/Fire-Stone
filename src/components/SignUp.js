@@ -127,7 +127,7 @@ const SignUp = ({ history }) => {
         >
           <PersonAddOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" style={{ textAlign: "center" }}>
           Sign Up
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSignUp}>

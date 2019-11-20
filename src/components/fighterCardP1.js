@@ -25,38 +25,21 @@ export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card} class="FC1">
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          {/* <Button id="restart-button" hidden="true" onClick="restart()">
-        Restart game
-      </Button> */}
-          <h3 id="game-message"></h3>
-          <img
-            src={Knight}
-            style={{
-              textAlign: "center",
-              height: "16.25rem",
-              width: "13.75rem",
-              marginBottom: 20
-            }}
-            alt=""
-          />
-
-          {/* <img src={Wizard}
+    <Card className={classes.card} class="FC1" style={{
+      position: "absolute",
+      left: "10%",
+      top: "55%",
+      transform: "translate(-55%, -10%)"
+    }}>
+      <img
+        src={Knight}
         style={{
-        textAlign: "center",
-        height: 250,
-        width: 250,
-
-        }}/> */}
-        </CardContent>
-      </CardActionArea>
+          textAlign: "center",
+          height: "16.25rem",
+          width: "13.75rem"
+        }}
+        alt=""
+      />
     </Card>
   );
 }
