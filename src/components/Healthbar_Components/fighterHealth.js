@@ -164,7 +164,7 @@ export default class FighterHealth extends Component {
       // <div style={styles.Container}>
       <Grid container spacing={3}>
         <Grid item xs={5}>
-          <h3 class="GoodHealth">
+          <h3 className="GoodHealth">
             Health <FavoriteIcon />
           </h3>
           <BorderLinearProgress
@@ -204,7 +204,7 @@ export default class FighterHealth extends Component {
           {this.gameMessage()}
         </Grid>
         <Grid item xs={5}>
-          <h3 class="BadHealth">
+          <h3 className="BadHealth">
             Health <FavoriteIcon />
           </h3>
           <BorderLinearProgress

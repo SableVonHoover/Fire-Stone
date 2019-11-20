@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -19,7 +19,6 @@ import { AuthContext } from "../js/auth.js";
 
 // import ViewContainer from "./ViewContainer";
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     height: 0,
@@ -37,14 +36,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-let actions = [
-  { icon: <SportsEsportsIcon />, name: "Quick Play" },
-  { icon: <ContactsIcon />, name: "About Us" },
-  { icon: <HelpIcon />, name: "Instructions" },
-  { icon: <AssignmentIndIcon />, name: "Sign In" },
-  { icon: <AddIcon />, name: "Sign Up" },
-  { icon: <ExitToAppIcon />, name: "Sign Out" }
-];
+let actions;
 
 export default function PopAction(props) {
   const { currentUser } = useContext(AuthContext);
@@ -56,25 +48,24 @@ export default function PopAction(props) {
     setHidden(prevHidden => !prevHidden);
   };
 
+  if (currentUser) {
+    actions = [
+      { icon: <SportsEsportsIcon />, name: "Quick Play" },
+      { icon: <ContactsIcon />, name: "About Us" },
+      { icon: <HelpIcon />, name: "Instructions" },
+      { icon: <ExitToAppIcon />, name: "Sign Out" }
+    ];
+  } else if (!currentUser) {
+    actions = [
+      { icon: <ContactsIcon />, name: "About Us" },
+      { icon: <HelpIcon />, name: "Instructions" },
+      { icon: <AssignmentIndIcon />, name: "Sign In" },
+      { icon: <AddIcon />, name: "Sign Up" }
+    ];
+  }
+
   const handleOpen = () => {
     setOpen(true);
-    if (currentUser) {
-      actions = [
-        { icon: <SportsEsportsIcon />, name: "Quick Play" },
-        { icon: <ContactsIcon />, name: "About Us" },
-        { icon: <HelpIcon />, name: "Instructions" },
-        { icon: <ExitToAppIcon />, name: "Sign Out" }
-      ];
-    }
-    else if (!currentUser) {
-      actions = [
-        { icon: <SportsEsportsIcon />, name: "Quick Play" },
-        { icon: <ContactsIcon />, name: "About Us" },
-        { icon: <HelpIcon />, name: "Instructions" },
-        { icon: <AssignmentIndIcon />, name: "Sign In" },
-        { icon: <AddIcon />, name: "Sign Up" }
-      ];
-    }
   };
 
   const handleClose = () => {

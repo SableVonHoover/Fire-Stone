@@ -52,7 +52,7 @@ export default function Game(props) {
             marginBottom: "3px"
           }}
         >
-          <h1 id="FireWordsButton" class="font-effect-fire-animation">
+          <h1 id="FireWordsButton" className="font-effect-fire-animation">
             Let's Play FireStone
           </h1>
         </Button>
