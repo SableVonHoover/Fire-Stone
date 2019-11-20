@@ -19,6 +19,7 @@ import SelectChoice from "./Selection";
 import characters from "./Characters.js";
 // import Card from "@material-ui/core/Card";
 import Game from "./Game";
+import Game2 from "./Game2";
 import * as firebase from "firebase/app";
 
 characters.forEach(character => {
@@ -26,6 +27,7 @@ characters.forEach(character => {
 });
 
 let redirectCounter = false;
+let selectedCharacter;
 
 const CharacterSelect = ({ history }) => {
   const handleCharacter = useCallback(
@@ -50,14 +52,22 @@ const CharacterSelect = ({ history }) => {
     [history]
   );
 
-  if (redirectCounter) {
+  if (redirectCounter === true && selectedCharacter === 2) {
+    redirectCounter = false;
+    return <Game2 />;
+  } else if (redirectCounter === true && selectedCharacter === 1) {
     redirectCounter = false;
     return <Game />;
   }
 
   const characterOptions = () => {
     return characters.map(character => (
-      <Button type="submit">
+      <Button
+        type="submit"
+        onClick={() => {
+          selectedCharacter = character.id;
+        }}
+      >
         <SelectChoice
           key={character.id}
           id={character.id}

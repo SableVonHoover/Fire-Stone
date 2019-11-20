@@ -8,10 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import "../css/App.css";
-import Dragon from "../images/dragon.gif";
-import Zombie from "../images/zombie.gif";
-import Forest from "../images/forest.gif";
-// import Grid from "@material-ui/core/Grid";
+import Knight from "../images/knight.gif";
+import Wizard from "../images/wizard.gif";
 
 const useStyles = makeStyles({
   card: {
@@ -23,28 +21,28 @@ const useStyles = makeStyles({
   }
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
     <Card
       className={classes.card}
-      class="FC2"
+      class="FC1"
       style={{
         position: "absolute",
-        left: "90%",
-        top: "70%",
-        transform: "translate(-70%, -90%)"
+        left: "10%",
+        top: "55%",
+        transform: "translate(-55%, -10%)"
       }}
     >
       <img
-        src={Dragon}
-        className="dragon"
+        src={Wizard}
         style={{
-          height: "20rem",
-          width: "15rem",
-          transform: "rotatey(180deg)"
+          textAlign: "center",
+          height: "16.25rem",
+          width: "13.75rem"
         }}
+        alt=""
       />
     </Card>
   );

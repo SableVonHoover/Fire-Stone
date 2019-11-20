@@ -87,7 +87,7 @@ const Login = ({ history }) => {
         >
           <AssignmentIndIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" style={{ textAlign: "center" }}>
           Sign in
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleLogin}>

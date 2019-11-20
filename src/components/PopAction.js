@@ -14,6 +14,7 @@ import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 import AddIcon from "@material-ui/icons/Add";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import app from "../js/firebaseConfig";
+import { width } from "window-size";
 
 // import ViewContainer from "./ViewContainer";
 
@@ -27,16 +28,20 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     bottom: theme.spacing(1),
     right: theme.spacing(1)
+  },
+  tooltip: {
+    fontSize: 30
+    // width: 10
   }
 }));
 
 const actions = [
   { icon: <SportsEsportsIcon />, name: "Quick Play" },
-  { icon: <ContactsIcon />, name: "AboutUs" },
+  { icon: <ContactsIcon />, name: "About Us" },
   { icon: <HelpIcon />, name: "Instructions" },
-  { icon: <AssignmentIndIcon />, name: "SignIn" },
-  { icon: <AddIcon />, name: "SignUp" },
-  { icon: <ExitToAppIcon />, name: "SignOut" }
+  { icon: <AssignmentIndIcon />, name: "Sign In" },
+  { icon: <AddIcon />, name: "Sign Up" },
+  { icon: <ExitToAppIcon />, name: "Sign Out" }
 ];
 
 export default function PopAction(props) {
@@ -58,7 +63,13 @@ export default function PopAction(props) {
 
   return (
     <div>
-      <Button onClick={handleVisibility}>Toggle Menu</Button>
+      <Button
+        onClick={handleVisibility}
+        elevation={11}
+        style={{ zIndex: "1000", top: "75vh" }}
+      >
+        Toggle Menu
+      </Button>
       <Backdrop open={open} />
 
       <SpeedDial
@@ -76,17 +87,18 @@ export default function PopAction(props) {
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
-            tooltipOpen
+            // tooltipOpen
             onClick={() => {
-              if (action.name === "SignOut") {
+              if (action.name === "Sign Out") {
                 app.auth().signOut();
-                props.handleComponentChange("SignIn");
+                props.handleComponentChange("Sign In");
                 handleClose();
               } else {
                 props.handleComponentChange(action.name);
                 handleClose();
               }
             }}
+            TooltipClasses={classes}
           />
         ))}
       </SpeedDial>

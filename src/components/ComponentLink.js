@@ -59,19 +59,19 @@ export default class ButtonActions extends Component {
       currentComponent: "Landing"
     };
   }
-  
+
   handleComponentChange = component => {
     this.setState({ currentComponent: component });
   };
 
   renderComponent = () => {
-    if (this.state.currentComponent === "Game") {
+    if (this.state.currentComponent === "Quick Play") {
       return (
         <Grow in={!false}>
           <Game />
         </Grow>
       );
-    } else if (this.state.currentComponent === "AboutUs") {
+    } else if (this.state.currentComponent === "About Us") {
       return (
         <Grow in={!false}>
           <AutoRotatingCarousel
@@ -98,16 +98,19 @@ export default class ButtonActions extends Component {
           <Instructions />
         </Grow>
       );
-    } else if (this.state.currentComponent === "SignIn") {
+    } else if (this.state.currentComponent === "Sign In") {
       return (
         <Grow in={!false}>
           <SignIn />
         </Grow>
       );
-    } else if (this.state.currentComponent === "SignUp") {
+    } else if (this.state.currentComponent === "Sign Up") {
       return (
         <Grow in={!false}>
-          <SignUp currentComponent={this.state.currentComponent} handleComponentChange={this.handleComponentChange}/>
+          <SignUp
+            currentComponent={this.state.currentComponent}
+            handleComponentChange={this.handleComponentChange}
+          />
         </Grow>
       );
     } else if (this.state.currentComponent === "Landing") {
@@ -116,7 +119,7 @@ export default class ButtonActions extends Component {
           <Landing />
         </Grow>
       );
-    } else if (this.state.currentComponent === "CharacterSelect") {
+    } else if (this.state.currentComponent === "Character Select") {
       return (
         <Grow in={!false}>
           <CharacterSelect />
@@ -127,7 +130,7 @@ export default class ButtonActions extends Component {
 
   render() {
     return (
-      <Container component="main" maxWidth="xl" align="center" justify="center">
+      <Container component="main" maxWidth="xl">
         <CssBaseline />
         <div>
           <Grid container>
