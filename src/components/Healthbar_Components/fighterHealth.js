@@ -84,7 +84,7 @@ export default class FighterHealth extends Component {
 
   //below function for testing purposes only until originally intended functions are working
   BossDamageRandomizer = () => {
-    const randomDmg = Math.floor(Math.random() * 100 + 1);
+    const randomDmg = Math.floor(Math.random() * 33 + 1);
 
     this.setState({
       bossDamageOutput: this.state.bossDamageOutput + randomDmg
@@ -177,7 +177,7 @@ export default class FighterHealth extends Component {
             <Button
               id="attack-button-1"
               onClick={() => {
-                this.handleChange("playerDamageOutput", 80);
+                this.handleChange("playerDamageOutput", 12.5);
                 this.handleChange("turn", 1);
                 this.BossDamageRandomizer();
                 this.updateHealth();
@@ -189,14 +189,14 @@ export default class FighterHealth extends Component {
             <Button
               id="attack-button-2"
               onClick={() => {
-                this.handleChange("playerDamageOutput", 100);
+                this.handleChange("playerDamageOutput", 30);
                 this.handleChange("turn", 1);
                 this.BossDamageRandomizer();
                 this.updateHealth();
                 console.log(this.state);
               }}
             >
-              Execution
+              Shield Bash
             </Button>
           </Grid>
         </Grid>

@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const actions = [
-  { icon: <SportsEsportsIcon />, name: "Game" },
+  { icon: <SportsEsportsIcon />, name: "Quick Play" },
   { icon: <ContactsIcon />, name: "AboutUs" },
   { icon: <HelpIcon />, name: "Instructions" },
   { icon: <AssignmentIndIcon />, name: "SignIn" },
